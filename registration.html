@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>報名資訊 - 人因工程研討會</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Serif Style (Optional, but looks nice) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
+    <style>
+      :root {
+        scroll-behavior: smooth;
+      }
+      header nav a, body {
+        font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+      }
+      .font-serif-tc {
+        font-family: 'Noto Serif TC', serif;
+      }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <div class="pl-[2px] pr-4 py-4 flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-3">
+            <img src="https://via.placeholder.com/40x40.png?text=Logo" alt="研討會 Logo" class="h-10">
+            <span class="text-2xl font-bold text-blue-600">人因工程研討會</span>
+        </a>
+        <nav>
+           <a href="index.html" class="text-xl text-gray-600 hover:text-blue-600 transition duration-300">返回主頁</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+        <!-- Registration Fee Section -->
+        <section class="bg-white py-16 md:py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-serif-tc font-bold text-gray-800 mb-4">註冊費用</h1>
+                <p class="text-lg text-gray-500 mb-12">選擇適合您的身分進行報名</p>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 mb-12"></div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                    <!-- EST Member -->
+                    <div class="flex flex-col items-center p-6 bg-gray-50 rounded-lg shadow-sm border-t-4 border-blue-500">
+                        <p class="text-4xl font-bold text-blue-600">NTD$3,000</p>
+                        <span class="text-xl text-gray-700 font-semibold mt-4">人因學會會員</span>
+                        <div class="w-32 h-px bg-blue-300 mt-2"></div>
+                    </div>
+                    <!-- Non-EST Member -->
+                    <div class="flex flex-col items-center p-6 bg-gray-50 rounded-lg shadow-sm border-t-4 border-blue-500">
+                        <p class="text-4xl font-bold text-blue-600">NTD$4,000</p>
+                        <span class="text-xl text-gray-700 font-semibold mt-4">非會員</span>
+                        <div class="w-32 h-px bg-blue-300 mt-2"></div>
+                    </div>
+                    <!-- Student EST Member -->
+                    <div class="flex flex-col items-center p-6 bg-gray-50 rounded-lg shadow-sm border-t-4 border-blue-500">
+                        <p class="text-4xl font-bold text-blue-600">NTD$2,200</p>
+                        <span class="text-xl text-gray-700 font-semibold mt-4">人因學會學生會員</span>
+                        <div class="w-32 h-px bg-blue-300 mt-2"></div>
+                    </div>
+                    <!-- Student Non-EST Member -->
+                    <div class="flex flex-col items-center p-6 bg-gray-50 rounded-lg shadow-sm border-t-4 border-blue-500">
+                        <p class="text-4xl font-bold text-blue-600">NTD$2,500</p>
+                        <span class="text-xl text-gray-700 font-semibold mt-4">非會員學生</span>
+                        <div class="w-32 h-px bg-blue-300 mt-2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Payment Section -->
+        <section class="bg-gray-50 py-16 md:py-20">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h1 class="text-4xl md:text-5xl font-serif-tc font-bold text-gray-800 mb-4">繳費方式</h1>
+                    <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto shadow-xl overflow-hidden rounded-lg">
+                    <!-- Left Column: General Info -->
+                    <div class="bg-blue-800 p-10 md:p-12 text-white flex flex-col justify-center">
+                        <h2 class="text-3xl font-bold mb-6 text-center">注意事項</h2>
+                        <div class="text-lg leading-relaxed">
+                            <p>本次會議僅接受「銀行轉帳」與「線上電子支付」兩種方式繳費，不支援行動支付（如：LinePay、ApplePay、台灣Pay等），謝謝您的配合。</p>
+                        </div>
+                    </div>
+                    <!-- Right Column: Payment Details -->
+                    <div class="bg-white p-10 md:p-12">
+                        <div class="space-y-8">
+                            <div>
+                                <h3 class="flex items-center text-2xl font-bold text-gray-800 mb-3">
+                                    <span class="w-3 h-3 bg-blue-600 rounded-full mr-3"></span>
+                                    線上電子支付
+                                </h3>
+                                <p class="text-gray-600 mb-4">請點選以下對應身分之連結，並請於「留言給商店」欄位輸入您的投稿文章ID，以利後續對帳流程。</p>
+                                <ol class="list-decimal list-inside text-blue-600 space-y-2">
+                                    <li><a href="#" class="hover:underline">人因學會會員 - NTD$3,000</a></li>
+                                    <li><a href="#" class="hover:underline">非會員 - NTD$4,000</a></li>
+                                    <li><a href="#" class="hover:underline">人因學會學生會員 - NTD$2,200</a></li>
+                                    <li><a href="#" class="hover:underline">非會員學生 - NTD$2,500</a></li>
+                                </ol>
+                            </div>
+                            <div class="pt-4">
+                                <h3 class="flex items-center text-2xl font-bold text-gray-800 mb-3">
+                                    <span class="w-3 h-3 bg-blue-600 rounded-full mr-3"></span>
+                                    銀行轉帳資訊
+                                </h3>
+                                <div class="text-gray-700 space-y-2 mt-4 text-lg">
+                                    <p><strong>戶名：</strong>中華民國人因工程學會</p>
+                                    <p><strong>銀行代碼：</strong>700</p>
+                                    <p><strong>銀行帳號：</strong>7000010 – 17008348</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-bold text-lg mb-2">人因工程研討會</p>
+            <p class="text-gray-400 mb-4">致力於推動以人為本的設計與創新。</p>
+            <p class="text-gray-500 text-sm">
+                <!-- Dynamic year will be inserted here -->
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Dynamic Footer Year ---
+        document.querySelector('footer .text-sm').innerHTML = `&copy; ${new Date().getFullYear()} 人因工程研討會. All Rights Reserved.`;
+    </script>
+</body>
+</html>

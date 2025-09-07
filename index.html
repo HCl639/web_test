@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>人因工程研討會</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Styles -->
+    <style>
+      :root {
+        scroll-behavior: smooth;
+      }
+      /* Set navigation link font to Microsoft JhengHei */
+      header nav a {
+        font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+      }
+      .faq-answer, .news-modal {
+        transition: all 0.5s ease-in-out;
+      }
+      /* Style for the active tab */
+      .faq-tab-button.active,
+      .submission-tab-button.active {
+        border-color: #2563EB; /* blue-600 */
+        color: #2563EB;
+        background-color: #EFF6FF; /* blue-50 */
+      }
+      .news-modal.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .news-modal-content {
+        transition: transform 0.3s ease-out;
+      }
+      .news-modal.hidden .news-modal-content {
+        transform: scale(0.95);
+      }
+      /* Speaker Carousel Animation */
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      .animate-scroll {
+        animation: scroll 40s linear infinite;
+      }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <div class="pl-[2px] pr-4 py-4 flex justify-between items-center">
+        <a href="#hero" class="flex items-center space-x-3">
+            <img src="https://via.placeholder.com/40x40.png?text=Logo" alt="研討會 Logo" class="h-10">
+            <span class="text-2xl font-bold text-blue-600">人因工程研討會</span>
+        </a>
+        
+        <nav class="hidden md:flex space-x-6">
+          <a href="#news" class="text-xl text-gray-600 hover:text-blue-600 transition duration-300">最新消息</a>
+          <a href="#about" class="text-xl text-gray-600 hover:text-blue-600 transition duration-300">關於研討會</a>
+          <a href="#schedule" class="text-xl text-gray-600 hover:text-blue-600 transition duration-300">議程</a>
+          <a href="registration.html" class="text-xl text-gray-600 hover:text-blue-600 transition duration-300">報名資訊</a>
+          <a href="#submission" class="text-xl text-gray-600 hover:text-blue-600 transition duration-300">活動資訊</a>
+          <a href="#location" class="text-xl text-gray-600 hover:text-blue-600 transition duration-300">交通與住宿</a>
+          <a href="#faq" class="text-xl text-gray-600 hover:text-blue-600 transition duration-300">常見問題</a>
+          <a href="#contact" class="text-xl text-gray-600 hover:text-blue-600 transition duration-300">聯絡我們</a>
+        </nav>
+        
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="text-gray-800 focus:outline-none" aria-label="Toggle menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <div id="mobile-menu" class="hidden md:hidden bg-white">
+        <nav class="px-4 pt-2 pb-4 space-y-2">
+          <a href="#news" class="block text-gray-600 hover:text-blue-600 py-2">最新消息</a>
+          <a href="#about" class="block text-gray-600 hover:text-blue-600 py-2">關於研討會</a>
+          <a href="#schedule" class="block text-gray-600 hover:text-blue-600 py-2">議程</a>
+          <a href="registration.html" class="block text-gray-600 hover:text-blue-600 py-2">報名資訊</a>
+          <a href="#submission" class="block text-gray-600 hover:text-blue-600 py-2">活動資訊</a>
+          <a href="#location" class="block text-gray-600 hover:text-blue-600 py-2">交通與住宿</a>
+          <a href="#faq" class="block text-gray-600 hover:text-blue-600 py-2">常見問題</a>
+          <a href="#contact" class="block text-gray-600 hover:text-blue-600 py-2">聯絡我們</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative h-screen flex items-center justify-center text-white">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('topbg.jpg')"></div>
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <div class="relative z-10 text-center px-4">
+              <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">中原大學 人因工程研討會</h1>
+              <p class="text-lg md:text-2xl mb-2">探索人、科技與系統的未來</p>
+              <p class="text-md md:text-xl font-light mb-8">2024年12月14日-15日 | 中原大學</p>
+              <a href="registration.html" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                立即報名
+              </a>
+            </div>
+        </section>
+        
+        <!-- News Section -->
+        <section id="news" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-[35px] font-bold text-gray-800">最新消息</h2>
+                    <p class="text-lg text-gray-500 mt-2">掌握研討會最新動態</p>
+                    <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+                </div>
+                <div id="news-list-homepage" class="max-w-4xl mx-auto grid gap-8 md:grid-cols-2">
+                    <!-- News items will be dynamically inserted here -->
+                </div>
+                <div class="text-center mt-12">
+                    <button id="view-all-news-button" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                        查看所有消息
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-[35px] font-bold text-gray-800">關於研討會</h2>
+                    <p class="text-lg text-gray-500 mt-2">連結學術與產業，共創以人為本的未來</p>
+                    <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+                </div>
+
+                <div class="max-w-5xl mx-auto space-y-20">
+                    <!-- Subsection 1: Topics and Introduction -->
+                    <div>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-6 text-center">研討會主題與簡介</h3>
+                        <div class="text-left text-gray-600 leading-relaxed text-xl space-y-4">
+                            <p>
+                                本次人因工程研討會旨在匯聚來自世界各地的學者、研究人員、設計師與業界專家，共同探討人因工程在各領域的前瞻應用與挑戰。我們將深入討論從使用者體驗、產品設計、工作環境安全到智慧醫療與自動駕駛等多元議題。
+                            </p>
+                            <p>
+                                我們相信，透過跨領域的對話與合作，能夠激發更多創新思維，推動以人為中心的設計理念，並解決當代社會面臨的複雜問題。誠摯邀請您一同參與這場知識饗宴，分享您的見解，並與領域內的頂尖專家建立連結。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Subsection 2: Organizer Introduction -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                        <!-- Left 1/4: Logo -->
+                        <div class="w-full md:w-1/4 flex justify-center">
+                            <img src="cycuiselogo.jpg" 
+                                 alt="中原大學工業與系統工程學系 Logo" 
+                                 class="max-w-48 md:max-w-full h-auto">
+                        </div>
+                        <!-- Right 3/4: Text -->
+                        <div class="w-full md:w-3/4">
+                            <h3 class="text-3xl font-bold text-gray-800 mb-6 text-center md:text-left">承辦單位介紹</h3>
+                            <div class="text-left text-gray-600 leading-relaxed text-xl">
+                                <p>
+                                    本次研討會由中原大學工業與系統工程學系主辦。本系致力於培育兼具理論基礎與實務能力的人因工程專業人才，長期深耕於人機互動、認知工程、職業安全與健康等研究領域，並與產業緊密合作，推動學術研究的實際應用。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Subsection 3: Sponsors and Partners -->
+                    <div>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">協力單位</h3>
+                        <p class="text-center text-xl text-gray-600 mb-10">感謝以下單位的支持與贊助，讓本次研討會得以順利舉行。</p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-10 items-center">
+                            <div class="flex justify-center" title="國科會">
+                                <img src="NSTC.jpg" alt="國科會" class="max-h-30 transition-all duration-300 cursor-pointer">
+                            </div>
+                            <div class="flex justify-center" title="工業工程學會">
+                                <img src="CIIE.png" alt="工業工程學會" class="max-h-30 transition-all duration-300 cursor-pointer">
+                            </div>
+                            <div class="flex justify-center" title="金屬產業低碳聯盟">
+                                <img src="MILCA.png" alt="金屬產業低碳聯盟" class="max-h-40 transition-all duration-300 cursor-pointer">
+                            </div>
+                            <div class="flex justify-center" title="高科大工業工程與管理系">
+                                <img src="IEM.png" alt="高科大工業工程與管理系" class="max-h-30 transition-all duration-300 cursor-pointer">
+                            </div>
+                             <div class="flex justify-center" title="中科院">
+                                <img src="NCSIST.jpg" alt="中科院" class="max-h-25 transition-all duration-300 cursor-pointer">
+                            </div>
+                            <div class="flex justify-center" title="中原大學工業與系統工程學系">
+                                <img src="cycuiselogo.jpg" alt="中原大學工業與系統工程學系" class="max-h-25 transition-all duration-300 cursor-pointer">
+                            </div>
+                            <div class="flex justify-center" title="高科資管">
+                                <img src="MSYS.png" alt="高科資管" class="max-h-30 transition-all duration-300 cursor-pointer">
+                            </div>
+                            <div class="flex justify-center" title="中華萃思學會">
+                                <img src="TTA.jpg" alt="中華萃思學會" class="max-h-25 transition-all duration-300 cursor-pointer">
+                            </div>
+                            <div class="flex justify-center" title="財團法人門諾醫院">
+                                <img src="MCH.png" alt="財團法人門諾醫院" class="max-h-25 transition-all duration-300 cursor-pointer">
+                            </div>
+                            <div class="flex justify-center" title="員榮社團法人">
+                                <img src="YR.png" alt="員榮社團法人" class="max-h-25 transition-all duration-300 cursor-pointer">
+                            </div>
+                            <div class="flex justify-center" title="勞動部勞動及職業安全衛生所">
+                                <img src="IOSH.svg" alt="勞動部勞動及職業安全衛生所" class="max-h-25 transition-all duration-300 cursor-pointer">
+                            </div>
+                            <div class="flex justify-center" title="合研科技">
+                                <img src="HY.jpeg" alt="合研科技" class="max-h-25 transition-all duration-300 cursor-pointer">
+                            </div>
+                            <div class="flex justify-center" title="工程科技推展中心">
+                                <img src="ETPC.jpg" alt="工程科技推展中心" class="max-h-25 transition-all duration-300 cursor-pointer">
+                            </div>
+                            <div class="flex justify-center" title="富足康科技足墊">
+                                <img src="FTC.jpg" alt="富足康科技足墊" class="max-h-25 transition-all duration-300 cursor-pointer">
+                            </div>
+                            <div class="flex justify-center" title="皮托科技">
+                                <img src="PT.png" alt="皮托科技" class="max-h-25 transition-all duration-300 cursor-pointer">
+                            </div>
+                            <div class="flex justify-center" title="拓比有限公司">
+                                <img src="tobii.jpg" alt="tobii拓比有限公司" class="max-h-25 transition-all duration-300 cursor-pointer">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Schedule Section -->
+        <section id="schedule" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-[35px] font-bold text-gray-800">議程安排</h2>
+                    <p class="text-lg text-gray-500 mt-2">精彩豐富的議程，讓您滿載而歸</p>
+                    <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+                </div>
+                <!-- Image placeholder for the schedule -->
+                <div class="max-w-4xl mx-auto">
+                    <img src="schedule.png" 
+                         alt="研討會議程表圖片" 
+                         class="w-full h-auto rounded-lg shadow-lg mx-auto border border-gray-200 ml-11">
+                </div>
+            </div>
+        </section>
+
+        <!-- Speakers Section -->
+        <section id="speakers" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto">
+                <div class="text-center mb-12 px-6">
+                    <h2 class="text-[35px] font-bold text-gray-800">主題講者</h2>
+                    <p class="text-lg text-gray-500 mt-2">來自學術界與產業界的頂尖專家</p>
+                    <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+                </div>
+                <div class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)] cursor-grab">
+                    <div class="flex items-center justify-center md:justify-start [&_li]:mx-4 [&_img]:max-w-none animate-scroll hover:[animation-play-state:paused]">
+                        <!-- First Set of Speakers -->
+                        <div class="flex-shrink-0 w-80 mx-4">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200">
+                                <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
+                                <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
+                                <p class="text-gray-500 mb-3">中原大學 OO學系</p>
+                                <p class="text-gray-600 text-sm">專長於認知心理學與使用者體驗研究，致力於將學術理論應用於產品設計。</p>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 w-80 mx-4">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200">
+                                <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
+                                <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
+                                <p class="text-gray-500 mb-3">中原大學 OO學系</p>
+                                <p class="text-gray-600 text-sm">擁有超過15年的業界經驗，領導團隊打造多款成功的數位產品。</p>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 w-80 mx-4">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200">
+                                <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
+                                <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
+                                <p class="text-gray-500 mb-3">中原大學 OO學系</p>
+                                <p class="text-gray-600 text-sm">專注於高風險環境下的人為失誤分析，如航空與醫療領域。</p>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 w-80 mx-4">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200">
+                                <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
+                                <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
+                                <p class="text-gray-500 mb-3">中原大學 OO學系</p>
+                                <p class="text-gray-600 text-sm">致力於推廣無障礙與通用設計理念，為不同能力的用戶創造友善的產品。</p>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 w-80 mx-4">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200">
+                                <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
+                                <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
+                                <p class="text-gray-500 mb-3">中原大學 OO學系</p>
+                                <p class="text-gray-600 text-sm">專精於工廠自動化中的人機協作安全，以及工作環境的物理人因改善。</p>
+                            </div>
+                        </div>
+                        <!-- Second (Duplicate) Set of Speakers for seamless loop -->
+                        <div class="flex-shrink-0 w-80 mx-4">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200">
+                                <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
+                                <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
+                                <p class="text-gray-500 mb-3">中原大學 OO學系</p>
+                                <p class="text-gray-600 text-sm">專長於認知心理學與使用者體驗研究，致力於將學術理論應用於產品設計。</p>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 w-80 mx-4">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200">
+                                <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
+                                <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
+                                <p class="text-gray-500 mb-3">中原大學 OO學系</p>
+                                <p class="text-gray-600 text-sm">擁有超過15年的業界經驗，領導團隊打造多款成功的數位產品。</p>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 w-80 mx-4">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200">
+                                <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
+                                <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
+                                <p class="text-gray-500 mb-3">中原大學 OO學系</p>
+                                <p class="text-gray-600 text-sm">專注於高風險環境下的人為失誤分析，如航空與醫療領域。</p>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 w-80 mx-4">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200">
+                                <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
+                                <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
+                                <p class="text-gray-500 mb-3">中原大學 OO學系</p>
+                                <p class="text-gray-600 text-sm">致力於推廣無障礙與通用設計理念，為不同能力的用戶創造友善的產品。</p>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 w-80 mx-4">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200">
+                                <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
+                                <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
+                                <p class="text-gray-500 mb-3">中原大學 OO學系</p>
+                                <p class="text-gray-600 text-sm">專精於工廠自動化中的人機協作安全，以及工作環境的物理人因改善。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Section (Summary) -->
+        <section id="registration" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <div class="mb-12">
+                    <h2 class="text-[35px] font-bold text-gray-800">報名資訊</h2>
+                    <p class="text-lg text-gray-500 mt-2">立即報名，加入我們的行列</p>
+                    <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+                </div>
+                <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">報名費用</h3>
+                    <ul class="text-left text-xl text-gray-600 space-y-3 mb-8 max-w-md mx-auto">
+                        <li><span class="font-semibold">人因學會會員：</span> NT$3,000</li>
+                        <li><span class="font-semibold">非會員：</span> NT$4,000</li>
+                        <li><span class="font-semibold">人因學會學生會員：</span> NT$2,200</li>
+                        <li><span class="font-semibold">非會員學生：</span> NT$2,500</li>
+                    </ul>
+                    <p class="text-gray-700 leading-relaxed mb-8 text-xl">
+                        報名費用包含會議手冊、午餐、茶點及紀念品。詳細資訊請見報名系統頁面。
+                    </p>
+                    <a href="registration.html" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                        前往報名系統
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Submission Section -->
+        <section id="submission" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-[35px] font-bold text-gray-800">活動資訊</h2>
+                    <p class="text-lg text-gray-500 mt-2">分享您的研究與創意成果</p>
+                    <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <!-- Submission Tab Buttons -->
+                    <div class="flex border-b border-gray-300">
+                        <button class="submission-tab-button flex-1 py-3 px-4 text-lg font-semibold text-center transition-colors duration-300 border-b-2" data-target="tab-symposium">人因工程研討會</button>
+                        <button class="submission-tab-button flex-1 py-3 px-4 text-lg font-semibold text-center transition-colors duration-300 border-b-2" data-target="tab-paper-competition">學生論文競賽</button>
+                        <button class="submission-tab-button flex-1 py-3 px-4 text-lg font-semibold text-center transition-colors duration-300 border-b-2" data-target="tab-design-competition">學生設計競賽</button>
+                    </div>
+
+                    <!-- Submission Tab Content -->
+                    <div class="mt-8 text-left text-gray-600 leading-relaxed text-xl">
+                        <div id="tab-symposium" class="submission-tab-panel space-y-4">
+                            <p>我們誠摯邀請您投稿與人因工程相關領域的原創研究論文。所有接受的論文將被收錄於研討會論文集中，並安排口頭或海報發表。</p>
+                            <h3 class="text-2xl font-semibold text-gray-800 pt-4">重要時程</h3>
+                             <ul class="list-disc list-inside space-y-2">
+                                <li><strong>開始投稿和線上報名：</strong> 2025.11.01</li>
+                                <li><strong>徵稿截止：</strong> 2026.01.17</li>
+                                <li><strong>寄發論文接受信：</strong> 2026.02.01</li>
+                                <li><strong>論文定稿上傳截止：</strong> 2026.02.15</li>
+                                <li><strong>費用繳交與討論會報名截止：</strong> 2026.03.14</li>
+                                <li><strong>研討會舉辦日期：</strong> 2026.03.28</li>
+                            </ul>
+                            <div class="pt-4 text-center">
+                                <a href="submission-symposium.html" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                                    查看活動詳情
+                                </a>
+                            </div>
+                        </div>
+                        <div id="tab-paper-competition" class="submission-tab-panel hidden space-y-4">
+                             <p>為鼓勵學生積極參與人因工程學術研究，提昇論文寫作與發表能力，特舉辦本競賽。</p>
+                             <h3 class="text-2xl font-semibold text-gray-800 pt-4">重要時程</h3>
+                             <ul class="list-disc list-inside space-y-2">
+                                <li><strong>開始投稿和線上報名：</strong> 2025.11.01</li>
+                                <li><strong>徵稿截止：</strong> 2026.01.17</li>
+                                <li><strong>決賽名單公佈：</strong> 2026.01.31</li>
+                                <li><strong>決賽：</strong> 2026.03.27</li>
+                                <li><strong>頒獎典禮：</strong> 2026.03.28</li>
+                            </ul>
+                            <div class="pt-4 text-center">
+                                <a href="submission-paper.html" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                                    查看競賽詳情
+                                </a>
+                            </div>
+                        </div>
+                        <div id="tab-design-competition" class="submission-tab-panel hidden space-y-4">
+                            <p>「智慧生活、人本設計」，鼓勵學生發揮創意，運用人因工程知識，設計解決實際生活問題的產品或服務。</p>
+                            <h3 class="text-2xl font-semibold text-gray-800 pt-4">重要時程</h3>
+                             <ul class="list-disc list-inside space-y-2">
+                                <li><strong>創意徵稿和線上報名：</strong> 2025.11.01</li>
+                                <li><strong>出賽徵稿截止：</strong> 2026.01.17</li>
+                                <li><strong>初賽入圍公告：</strong> 2026.01.31</li>
+                                <li><strong>決賽：</strong> 2026.03.27</li>
+                                <li><strong>頒獎典禮：</strong> 2026.03.28</li>
+                            </ul>
+                            <div class="pt-4 text-center">
+                                <a href="submission-design.html" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                                    查看競賽詳情
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location & Accommodation Section -->
+        <section id="location" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-[35px] font-bold text-gray-800">交通與住宿</h2>
+                    <p class="text-lg text-gray-500 mt-2">期待在中原大學與您相見</p>
+                    <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="h-96 rounded-lg overflow-hidden shadow-lg">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d479.0438880898228!2d121.24064121109558!3d24.957351736568132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468221447a0f021%3A0x2b86d2650bb8bcff!2z5Lit5Y6f5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1757230930086!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="中原大學地圖">
+                        </iframe>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="text-2xl font-bold text-gray-800">會議地點：中原大學</h3>
+                        <p class="text-gray-600 mt-2 mb-6 text-xl">320桃園市中壢區中北路200號</p>
+                        <h3 class="text-2xl font-bold text-gray-800 mt-8">住宿資訊</h3>
+                        <p class="text-gray-700 leading-relaxed mt-2 text-xl">
+                            我們建議可參考鄰近的住宿選項，如<a href="https://maps.app.goo.gl/SNuP5E2pZnLC8KZH8" class="text-blue-600">中原會館</a>等。
+                        </p>
+                        <h3 class="text-2xl font-bold text-gray-800 mt-8">交通資訊</h3>
+                        <p class="text-gray-700 leading-relaxed mt-2 text-xl">
+                            校內有<a href="https://maps.app.goo.gl/gTArDH5ZXR4oGTdr7" class="text-blue-600">室內停車場</a>，建議搭乘大眾運輸工具前往。可搭乘台鐵至中壢站，轉乘公車或計程車抵達校園。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-[35px] font-bold text-gray-800">常見問題</h2>
+                    <p class="text-lg text-gray-500 mt-2">為您解答常見的疑問</p>
+                    <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+                </div>
+                <div class="max-w-3xl mx-auto">
+                    <!-- Tab Buttons -->
+                    <div class="flex border-b border-gray-300">
+                        <button class="faq-tab-button flex-1 py-3 px-4 text-lg font-semibold text-center transition-colors duration-300 border-b-2" data-target="tab-registration-faq">報名與費用</button>
+                        <button class="faq-tab-button flex-1 py-3 px-4 text-lg font-semibold text-center transition-colors duration-300 border-b-2" data-target="tab-submission-faq">投稿相關</button>
+                        <button class="faq-tab-button flex-1 py-3 px-4 text-lg font-semibold text-center transition-colors duration-300 border-b-2" data-target="tab-general-faq">現場事宜</button>
+                    </div>
+
+                    <!-- Search Input -->
+                    <div class="my-6">
+                      <input type="text" id="faq-search" placeholder="搜尋問題..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                    </div>
+
+                    <!-- Tab Content Panels -->
+                    <div>
+                        <!-- Registration & Fees Panel -->
+                        <div id="tab-registration-faq" class="faq-tab-panel space-y-4">
+                            <!-- Populated by JS -->
+                        </div>
+
+                        <!-- Submission Panel -->
+                        <div id="tab-submission-faq" class="faq-tab-panel hidden space-y-4">
+                            <!-- Populated by JS -->
+                        </div>
+
+                        <!-- General Info Panel -->
+                        <div id="tab-general-faq" class="faq-tab-panel hidden space-y-4">
+                             <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="text-center mt-8 space-x-4">
+                        <button id="load-more-faq" class="bg-gray-200 text-gray-700 font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-300 transition duration-300">
+                            顯示更多
+                        </button>
+                        <button id="collapse-faq-button" class="bg-gray-200 text-gray-700 font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-300 transition duration-300 hidden">
+                            顯示更少
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <div class="mb-12">
+                    <h2 class="text-[35px] font-bold text-gray-800">聯絡我們</h2>
+                    <p class="text-lg text-gray-500 mt-2">若有任何問題，歡迎隨時與我們聯繫</p>
+                    <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+                </div>
+                <div class="max-w-xl mx-auto text-xl text-gray-700">
+                    <p class="mb-4"><strong>研討會秘書處</strong></p>
+                    <p class="mb-2">電子郵件：<a href="mailto:conference@hfe.org.tw" class="text-blue-600 hover:underline">conference@hfe.org.tw</a></p>
+                    <p>聯絡電話：(03) 265-4117</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-bold text-lg mb-2">人因工程研討會</p>
+            <p class="text-gray-400 mb-4">致力於推動以人為本的設計與創新。</p>
+            <p class="text-gray-500 text-sm">
+                &copy; 2024 人因工程研討會. 版權所有.
+            </p>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top-button" title="回到頂部" class="fixed bottom-8 right-8 w-14 h-14 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-opacity duration-300 opacity-0 pointer-events-none z-50">
+        <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
+    </button>
+    
+    <!-- News Modal -->
+    <div id="news-modal" class="news-modal hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-[60]">
+        <div class="news-modal-content bg-white rounded-lg shadow-xl w-full max-w-3xl max-h-[90vh] flex flex-col">
+            <header class="flex justify-between items-center p-6 border-b">
+                <h2 class="text-2xl font-bold text-gray-800">所有最新消息</h2>
+                <button id="close-news-modal-button" class="text-gray-500 hover:text-gray-800" aria-label="關閉視窗">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </header>
+            <div id="news-list-modal" class="p-8 space-y-6 overflow-y-auto">
+                <!-- All news items will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // --- Mobile Menu Toggle Logic ---
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = menuButton.querySelector('svg > path');
+
+        const openIconPath = "M4 6h16M4 12h16m-7 6h7";
+        const closeIconPath = "M6 18L18 6M6 6l12 12";
+
+        menuButton.addEventListener('click', () => {
+            const isMenuOpen = !mobileMenu.classList.toggle('hidden');
+            menuIcon.setAttribute('d', isMenuOpen ? closeIconPath : openIconPath);
+        });
+
+        // --- Smooth Scroll Logic for Navigation ---
+        function smoothScrollTo(targetElement) {
+            const header = document.querySelector('header');
+            const headerOffset = header ? header.offsetHeight + 16 : 16;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+
+        function handleAnchorClick(e) {
+            const anchor = e.currentTarget;
+            const href = anchor.getAttribute('href');
+            // Only handle internal anchors on the same page
+            if (href.startsWith('#') && href.length > 1) {
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    e.preventDefault();
+                    smoothScrollTo(targetElement);
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        menuIcon.setAttribute('d', openIconPath);
+                    }
+                }
+            }
+        }
+
+        document.querySelectorAll('header a[href^="#"], #hero a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', handleAnchorClick);
+        });
+        
+        // --- NEWS DATA & LOGIC ---
+        const allNewsData = [
+            { date: '2024年08月01日', title: '摘要投稿截止日期延期', content: '為鼓勵更多研究者參與，摘要投稿截止日期將延長至 2024年10月15日。敬請把握機會！' },
+            { date: '2024年07月20日', title: '主題講者名單公佈', content: '我們很榮幸地宣布，本次研討會已邀請到業界頂尖專家擔任主題講者，名單詳見講者介紹頁面。' },
+            { date: '2024年07月10日', title: '早鳥報名優惠開跑', content: '即日起至11月15日止，完成報名即可享有早鳥優惠價格，請勿錯過。' },
+            ...Array.from({ length: 17 }, (_, i) => ({
+                date: `2024年06月${20 - i}日`,
+                title: `歷史消息標題 #${i + 1}`,
+                content: `這是關於第 ${i + 1} 則歷史消息的詳細內容說明文字，用於填充版面以展示滾動功能。`
+            }))
+        ];
+        
+        function createNewsItemHTML(news) {
+            return `
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500">
+                    <p class="text-sm text-gray-500 mb-2">${news.date}</p>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">${news.title}</h3>
+                    <p class="text-gray-600">${news.content}</p>
+                </div>`;
+        }
+        
+        // Render news on the homepage
+        const homepageNewsContainer = document.getElementById('news-list-homepage');
+        homepageNewsContainer.innerHTML = allNewsData.slice(0, 4).map(createNewsItemHTML).join('');
+        
+        // Render all news in the modal
+        const modalNewsContainer = document.getElementById('news-list-modal');
+        modalNewsContainer.innerHTML = allNewsData.map(createNewsItemHTML).join('');
+
+        // Modal open/close logic
+        const newsModal = document.getElementById('news-modal');
+        const viewAllButton = document.getElementById('view-all-news-button');
+        const closeModalButton = document.getElementById('close-news-modal-button');
+
+        function openNewsModal() {
+            newsModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeNewsModal() {
+            newsModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+        
+        viewAllButton.addEventListener('click', openNewsModal);
+        closeModalButton.addEventListener('click', closeNewsModal);
+        newsModal.addEventListener('click', (e) => {
+            if (e.target === newsModal) {
+                closeNewsModal();
+            }
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !newsModal.classList.contains('hidden')) {
+                closeNewsModal();
+            }
+        });
+
+        // --- Submission Tab Logic ---
+        const submissionTabButtons = document.querySelectorAll('.submission-tab-button');
+        const submissionTabPanels = document.querySelectorAll('.submission-tab-panel');
+
+        function activateSubmissionTab(targetId) {
+            submissionTabButtons.forEach(button => {
+                button.classList.toggle('active', button.dataset.target === targetId);
+                button.classList.toggle('text-gray-500', button.dataset.target !== targetId);
+            });
+            submissionTabPanels.forEach(panel => panel.classList.toggle('hidden', panel.id !== targetId));
+        }
+
+        submissionTabButtons.forEach(button => {
+            button.addEventListener('click', () => activateSubmissionTab(button.dataset.target));
+        });
+
+        if (submissionTabButtons.length > 0) {
+            activateSubmissionTab(submissionTabButtons[0].dataset.target);
+        }
+
+        // --- FAQ DATA ---
+        const allFaqs = {
+            'tab-registration-faq': [
+                { q: '研討會的報名費用包含哪些項目？', a: '報名費用包含會議手冊、兩日午餐、會議期間的茶點及一份研討會紀念品。' },
+                { q: '是否提供學生優惠？', a: '是的，我們為在學學生（需出示有效學生證）提供優惠的報名價格。詳細費用請參考「報名資訊」區塊的說明。' },
+                { q: '如果我臨時無法參加，可以退費嗎？', a: '退費申請需於特定日期前提出，並將酌收部分手續費。詳細退費政策請參考報名網站說明。' },
+            ],
+            'tab-submission-faq': Array.from({ length: 40 }, (_, i) => ({
+                q: `投稿相關問題 #${i + 1}：這個問題的標題是什麼？`,
+                a: `這是第 ${i + 1} 個投稿相關問題的詳細解答。這裡可以放入更多關於論文格式、審查流程、截止日期等說明文字。`
+            })),
+            'tab-general-faq': [
+                { q: '會議現場是否提供網路？', a: '是的，會議全區將提供免費的 Wi-Fi 無線網路供所有與會者使用。' },
+                { q: '現場是否有提供餐點？', a: '是的，報名費用中已包含兩日的午餐以及會議期間的茶點。' },
+                { q: '我需要自己攜帶筆電嗎？', a: '若您是報告者，建議您攜帶自己的筆電以確保相容性。現場也會備有公用電腦供緊急使用。' },
+            ]
+        };
+
+        // --- FAQ LOGIC ---
+        const ITEMS_PER_PAGE = 5;
+        let currentVisibleCounts = {};
+
+        const faqTabButtons = document.querySelectorAll('.faq-tab-button');
+        const faqTabPanels = document.querySelectorAll('.faq-tab-panel');
+        const loadMoreButton = document.getElementById('load-more-faq');
+        const collapseButton = document.getElementById('collapse-faq-button');
+        const searchInput = document.getElementById('faq-search');
+        
+        function createFaqItemHTML(faq) {
+            return `
+                <div class="faq-item bg-white rounded-lg shadow-md overflow-hidden" data-question="${faq.q}" data-answer="${faq.a}">
+                    <button class="faq-question w-full flex justify-between items-center text-left p-6">
+                        <span class="text-xl font-semibold text-gray-800">${faq.q}</span>
+                        <svg class="faq-icon w-6 h-6 text-blue-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden">
+                        <p class="px-6 pb-6 text-gray-600 text-lg">${faq.a}</p>
+                    </div>
+                </div>`;
+        }
+        
+        function renderFaqs(panelId, faqsToRender) {
+            const panel = document.getElementById(panelId);
+            panel.innerHTML = faqsToRender.map(createFaqItemHTML).join('');
+            addAccordionListeners(panel);
+        }
+
+        function updateFaqButtonsVisibility(panelId) {
+            const totalFaqs = allFaqs[panelId].length;
+            const visibleCount = currentVisibleCounts[panelId];
+            
+            loadMoreButton.style.display = (visibleCount < totalFaqs) ? 'inline-block' : 'none';
+            collapseButton.style.display = (visibleCount > ITEMS_PER_PAGE && totalFaqs > ITEMS_PER_PAGE) ? 'inline-block' : 'none';
+        }
+        
+        function displayFaqsForTab(panelId) {
+            const faqs = allFaqs[panelId];
+            const visibleCount = currentVisibleCounts[panelId];
+            renderFaqs(panelId, faqs.slice(0, visibleCount));
+            updateFaqButtonsVisibility(panelId);
+        }
+        
+        function activateFaqTab(targetId) {
+            faqTabButtons.forEach(button => {
+                button.classList.toggle('active', button.dataset.target === targetId);
+                button.classList.toggle('text-gray-500', button.dataset.target !== targetId);
+            });
+            faqTabPanels.forEach(panel => panel.classList.toggle('hidden', panel.id !== targetId));
+            
+            searchInput.value = ''; // Clear search on tab change
+            displayFaqsForTab(targetId);
+        }
+
+        function handleFaqSearch() {
+            const query = searchInput.value.toLowerCase();
+            const activePanel = document.querySelector('.faq-tab-panel:not(.hidden)');
+            const panelId = activePanel.id;
+            
+            if (query) {
+                const filteredFaqs = allFaqs[panelId].filter(faq => 
+                    faq.q.toLowerCase().includes(query) || faq.a.toLowerCase().includes(query)
+                );
+                renderFaqs(panelId, filteredFaqs);
+                loadMoreButton.style.display = 'none';
+                collapseButton.style.display = 'none';
+            } else {
+                displayFaqsForTab(panelId); // Restore default view
+            }
+        }
+
+        faqTabButtons.forEach(button => {
+            const targetId = button.dataset.target;
+            currentVisibleCounts[targetId] = ITEMS_PER_PAGE;
+            button.addEventListener('click', () => activateFaqTab(targetId));
+        });
+
+        loadMoreButton.addEventListener('click', () => {
+            const activePanel = document.querySelector('.faq-tab-panel:not(.hidden)');
+            const panelId = activePanel.id;
+            currentVisibleCounts[panelId] += ITEMS_PER_PAGE;
+            displayFaqsForTab(panelId);
+        });
+
+        collapseButton.addEventListener('click', () => {
+            const activePanel = document.querySelector('.faq-tab-panel:not(.hidden)');
+            const panelId = activePanel.id;
+            currentVisibleCounts[panelId] = ITEMS_PER_PAGE;
+            displayFaqsForTab(panelId);
+
+            const faqSection = document.getElementById('faq');
+            if (faqSection) {
+              smoothScrollTo(faqSection);
+            }
+        });
+        
+        searchInput.addEventListener('input', handleFaqSearch);
+
+        function addAccordionListeners(container) {
+            container.querySelectorAll('.faq-item').forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const icon = item.querySelector('.faq-icon');
+
+                question.addEventListener('click', () => {
+                    const isOpen = item.classList.toggle('open');
+                    answer.style.maxHeight = isOpen ? answer.scrollHeight + 'px' : '0px';
+                    icon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+                });
+            });
+        }
+        
+        // Initial setup
+        if (faqTabButtons.length > 0) {
+            activateFaqTab(faqTabButtons[0].dataset.target);
+        }
+
+        // --- Back to Top Button Logic ---
+        const backToTopButton = document.getElementById('back-to-top-button');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) { // Show button after scrolling 300px
+                backToTopButton.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // --- Speaker Carousel Drag Logic ---
+        const sliderContainer = document.querySelector('#speakers .overflow-hidden');
+        if (sliderContainer) {
+            const innerSlider = sliderContainer.querySelector('.animate-scroll');
+            if (innerSlider) {
+                let isDown = false;
+                let startX;
+                let initialTranslateX;
+
+                const style = document.createElement('style');
+                style.textContent = `
+                    #speakers .overflow-hidden.is-dragging { cursor: grabbing; cursor: -webkit-grabbing; user-select: none; }
+                    #speakers .overflow-hidden.is-dragging * { pointer-events: none; }
+                `;
+                document.head.append(style);
+
+                const startDragging = (e) => {
+                    isDown = true;
+                    sliderContainer.classList.add('is-dragging');
+                    
+                    const transformMatrix = window.getComputedStyle(innerSlider).transform;
+                    initialTranslateX = transformMatrix === 'none' ? 0 : parseInt(transformMatrix.split(',')[4], 10);
+                    
+                    innerSlider.classList.remove('animate-scroll');
+                    innerSlider.style.transform = `translateX(${initialTranslateX}px)`;
+                    
+                    startX = e.pageX;
+                    e.preventDefault();
+                };
+
+                const stopDragging = () => {
+                    if (!isDown) return;
+                    isDown = false;
+                    sliderContainer.classList.remove('is-dragging');
+
+                    const finalTransform = innerSlider.style.transform;
+                    let finalTranslateX = finalTransform && finalTransform.includes('translateX') ? parseInt(finalTransform.match(/-?\d+/)[0], 10) : 0;
+                    
+                    const contentWidth = innerSlider.scrollWidth / 2;
+                    if (contentWidth > 0) {
+                        if (finalTranslateX > 0) {
+                            finalTranslateX = (finalTranslateX % contentWidth) - contentWidth;
+                        } else if (finalTranslateX < -contentWidth) {
+                            finalTranslateX %= contentWidth;
+                        }
+                    }
+
+                    innerSlider.style.transform = `translateX(${finalTranslateX}px)`;
+                    
+                    const animationDuration = 40;
+                    const completionRatio = contentWidth > 0 ? finalTranslateX / -contentWidth : 0;
+                    const delay = completionRatio * animationDuration;
+                    
+                    innerSlider.style.transform = '';
+                    innerSlider.style.animationDelay = `-${delay}s`;
+                    innerSlider.classList.add('animate-scroll');
+                };
+
+                const handleDrag = (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const walk = e.pageX - startX;
+                    innerSlider.style.transform = `translateX(${initialTranslateX + walk}px)`;
+                };
+
+                sliderContainer.addEventListener('mousedown', startDragging);
+                document.addEventListener('mouseup', stopDragging);
+                document.addEventListener('mousemove', handleDrag);
+            }
+        }
+
+        // --- Dynamic Footer Year ---
+        const currentYear = new Date().getFullYear();
+        document.querySelectorAll('footer .text-sm').forEach(el => {
+            el.innerHTML = `&copy; ${currentYear} 人因工程研討會. 版權所有.`;
+        });
+    </script>
+</body>
+</html>

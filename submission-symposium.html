@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>投稿資訊 - 人因工程研討會</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Styles -->
+    <style>
+      body {
+        font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <div class="pl-[2px] pr-4 py-4 flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-3">
+            <img src="https://via.placeholder.com/40x40.png?text=Logo" alt="研討會 Logo" class="h-10">
+            <span class="text-2xl font-bold text-blue-600">人因工程研討會</span>
+        </a>
+        <nav>
+           <a href="index.html" class="text-xl text-gray-600 hover:text-blue-600 transition duration-300">返回主頁</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+        <section class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800">人因工程研討會</h1>
+                    <p class="text-lg text-gray-500 mt-2">投稿資訊詳情</p>
+                    <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+                </div>
+
+                <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-lg text-left text-gray-600 leading-relaxed text-xl space-y-8">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-4">研討會簡介</h2>
+                        <p>我們誠摯邀請您投稿與人因工程相關領域的原創研究論文。所有接受的論文將被收錄於研討會論文集中，並安排口頭或海報發表。</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-4">投稿主題</h2>
+                        <p>投稿主題涵蓋（但不限於）：</p>
+                        <ul class="list-disc list-inside mt-4 space-y-2 text-gray-700">
+                            <li>認知工程</li>
+                            <li>人機互動</li>
+                            <li>工作環境設計</li>
+                            <li>安全與健康</li>
+                            <li>通用設計</li>
+                            <li>使用者體驗</li>
+                            <li>產品設計</li>
+                            <li>智慧醫療</li>
+                            <li>自動駕駛</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-4">重要時程</h2>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="py-3 pr-4 font-semibold">開始投稿和線上報名</td>
+                                        <td class="py-3">2025年11月01日</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 pr-4 font-semibold">徵稿截止</td>
+                                        <td class="py-3">2026年01月17日</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 pr-4 font-semibold">審稿論文接受信</td>
+                                        <td class="py-3">2026年02月01日</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 pr-4 font-semibold">論文定稿上傳截止</td>
+                                        <td class="py-3">2026年02月15日</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 pr-4 font-semibold">費用繳交與研討會報名截止</td>
+                                        <td class="py-3">2026年03月14日</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 pr-4 font-semibold">研討會舉辦日期</td>
+                                        <td class="py-3">2026年03月28日</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="pt-4 text-center">
+                                <a href="registration.html" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                                    立即報名
+                                </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-bold text-lg mb-2">人因工程研討會</p>
+            <p class="text-gray-400 mb-4">致力於推動以人為本的設計與創新。</p>
+            <p class="text-gray-500 text-sm">
+                &copy; 2024 人因工程研討會. 版權所有.
+            </p>
+        </div>
+    </footer>
+    <script>
+        document.querySelector('footer .text-sm').innerHTML = `&copy; ${new Date().getFullYear()} 人因工程研討會. 版權所有.`;
+    </script>
+</body>
+</html>
