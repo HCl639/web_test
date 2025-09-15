@@ -35,14 +35,6 @@
       .news-modal.hidden .news-modal-content {
         transform: scale(0.95);
       }
-      /* Speaker Carousel Animation */
-      @keyframes scroll {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-      }
-      .animate-scroll {
-        animation: scroll 40s linear infinite;
-      }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
@@ -244,96 +236,64 @@
 
         <!-- Speakers Section -->
         <section id="speakers" class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto">
-                <div class="text-center mb-12 px-6">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
                     <h2 class="text-[35px] font-bold text-gray-800">主題講者</h2>
                     <p class="text-lg text-gray-500 mt-2">來自學術界與產業界的頂尖專家</p>
                     <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
                 </div>
-                <div class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)] cursor-grab">
-                    <div class="flex items-center justify-center md:justify-start [&_li]:mx-4 [&_img]:max-w-none animate-scroll hover:[animation-play-state:paused]">
-                        <!-- First Set of Speakers -->
-                        <div class="flex-shrink-0 w-80 mx-4">
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200">
-                                <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
-                                <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
-                                <p class="text-gray-500 mb-3">中原大學 OO學系</p>
-                                <p class="text-gray-600 text-sm">專長於認知心理學與使用者體驗研究，致力於將學術理論應用於產品設計。</p>
+                <div class="max-w-6xl mx-auto">
+                    <div id="speaker-carousel" class="relative overflow-hidden">
+                        <div id="speaker-list" class="flex transition-transform duration-500 ease-in-out">
+                            <!-- Speaker 1 -->
+                            <div class="flex-shrink-0 px-4">
+                                <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200 h-full flex flex-col">
+                                    <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
+                                    <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
+                                    <p class="text-gray-500 mb-3">中原大學 OO學系</p>
+                                    <p class="text-gray-600 text-sm flex-grow">專長於認知心理學與使用者體驗研究，致力於將學術理論應用於產品設計。</p>
+                                </div>
+                            </div>
+                            <!-- Speaker 2 -->
+                            <div class="flex-shrink-0 px-4">
+                                <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200 h-full flex flex-col">
+                                    <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
+                                    <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
+                                    <p class="text-gray-500 mb-3">中原大學 OO學系</p>
+                                    <p class="text-gray-600 text-sm flex-grow">擁有超過15年的業界經驗，領導團隊打造多款成功的數位產品。</p>
+                                </div>
+                            </div>
+                            <!-- Speaker 3 -->
+                            <div class="flex-shrink-0 px-4">
+                                <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200 h-full flex flex-col">
+                                    <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
+                                    <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
+                                    <p class="text-gray-500 mb-3">中原大學 OO學系</p>
+                                    <p class="text-gray-600 text-sm flex-grow">專注於高風險環境下的人為失誤分析，如航空與醫療領域。</p>
+                                </div>
+                            </div>
+                            <!-- Speaker 4 -->
+                            <div class="flex-shrink-0 px-4">
+                                <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200 h-full flex flex-col">
+                                    <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
+                                    <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
+                                    <p class="text-gray-500 mb-3">中原大學 OO學系</p>
+                                    <p class="text-gray-600 text-sm flex-grow">致力於推廣無障礙與通用設計理念，為不同能力的用戶創造友善的產品。</p>
+                                </div>
+                            </div>
+                            <!-- Speaker 5 -->
+                            <div class="flex-shrink-0 px-4">
+                                <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200 h-full flex flex-col">
+                                    <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
+                                    <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
+                                    <p class="text-gray-500 mb-3">中原大學 OO學系</p>
+                                    <p class="text-gray-600 text-sm flex-grow">專精於工廠自動化中的人機協作安全，以及工作環境的物理人因改善。</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="flex-shrink-0 w-80 mx-4">
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200">
-                                <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
-                                <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
-                                <p class="text-gray-500 mb-3">中原大學 OO學系</p>
-                                <p class="text-gray-600 text-sm">擁有超過15年的業界經驗，領導團隊打造多款成功的數位產品。</p>
-                            </div>
-                        </div>
-                        <div class="flex-shrink-0 w-80 mx-4">
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200">
-                                <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
-                                <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
-                                <p class="text-gray-500 mb-3">中原大學 OO學系</p>
-                                <p class="text-gray-600 text-sm">專注於高風險環境下的人為失誤分析，如航空與醫療領域。</p>
-                            </div>
-                        </div>
-                        <div class="flex-shrink-0 w-80 mx-4">
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200">
-                                <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
-                                <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
-                                <p class="text-gray-500 mb-3">中原大學 OO學系</p>
-                                <p class="text-gray-600 text-sm">致力於推廣無障礙與通用設計理念，為不同能力的用戶創造友善的產品。</p>
-                            </div>
-                        </div>
-                        <div class="flex-shrink-0 w-80 mx-4">
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200">
-                                <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
-                                <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
-                                <p class="text-gray-500 mb-3">中原大學 OO學系</p>
-                                <p class="text-gray-600 text-sm">專精於工廠自動化中的人機協作安全，以及工作環境的物理人因改善。</p>
-                            </div>
-                        </div>
-                        <!-- Second (Duplicate) Set of Speakers for seamless loop -->
-                        <div class="flex-shrink-0 w-80 mx-4">
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200">
-                                <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
-                                <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
-                                <p class="text-gray-500 mb-3">中原大學 OO學系</p>
-                                <p class="text-gray-600 text-sm">專長於認知心理學與使用者體驗研究，致力於將學術理論應用於產品設計。</p>
-                            </div>
-                        </div>
-                        <div class="flex-shrink-0 w-80 mx-4">
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200">
-                                <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
-                                <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
-                                <p class="text-gray-500 mb-3">中原大學 OO學系</p>
-                                <p class="text-gray-600 text-sm">擁有超過15年的業界經驗，領導團隊打造多款成功的數位產品。</p>
-                            </div>
-                        </div>
-                        <div class="flex-shrink-0 w-80 mx-4">
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200">
-                                <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
-                                <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
-                                <p class="text-gray-500 mb-3">中原大學 OO學系</p>
-                                <p class="text-gray-600 text-sm">專注於高風險環境下的人為失誤分析，如航空與醫療領域。</p>
-                            </div>
-                        </div>
-                        <div class="flex-shrink-0 w-80 mx-4">
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200">
-                                <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
-                                <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
-                                <p class="text-gray-500 mb-3">中原大學 OO學系</p>
-                                <p class="text-gray-600 text-sm">致力於推廣無障礙與通用設計理念，為不同能力的用戶創造友善的產品。</p>
-                            </div>
-                        </div>
-                        <div class="flex-shrink-0 w-80 mx-4">
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200">
-                                <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
-                                <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
-                                <p class="text-gray-500 mb-3">中原大學 OO學系</p>
-                                <p class="text-gray-600 text-sm">專精於工廠自動化中的人機協作安全，以及工作環境的物理人因改善。</p>
-                            </div>
-                        </div>
+                    </div>
+                    <div id="speaker-pagination" class="flex justify-center mt-8 space-x-3">
+                        <!-- Pagination dots will be inserted here by JavaScript -->
                     </div>
                 </div>
             </div>
@@ -550,9 +510,8 @@
         <div class="container mx-auto px-6 text-center">
             <p class="font-bold text-lg mb-2">人因工程研討會</p>
             <p class="text-gray-400 mb-4">致力於推動以人為本的設計與創新。</p>
-            <p class="text-gray-400 mb-4">特別感謝中原大學工業與系統工程學系-張展瑋協助</p>
             <p class="text-gray-500 text-sm">
-                &copy; Made by 中原工業與系統工程學系-網路實驗室<br>特別感謝中原大學工業與系統工程學系-張展瑋協助
+                &copy; 2024 人因工程研討會. 版權所有.
             </p>
         </div>
     </footer>
@@ -628,20 +587,47 @@
         
         // --- NEWS DATA & LOGIC ---
         const allNewsData = [
-            { date: '2024年08月01日', title: '摘要投稿截止日期延期', content: '為鼓勵更多研究者參與，摘要投稿截止日期將延長至 2024年10月15日。敬請把握機會！' },
-            { date: '2024年07月20日', title: '主題講者名單公佈', content: '我們很榮幸地宣布，本次研討會已邀請到業界頂尖專家擔任主題講者，名單詳見講者介紹頁面。' },
-            { date: '2024年07月10日', title: '早鳥報名優惠開跑', content: '即日起至11月15日止，完成報名即可享有早鳥優惠價格，請勿錯過。' },
-            ...Array.from({ length: 17 }, (_, i) => ({
+            { date: '2024年08月01日', title: '摘要投稿截止日期延期', content: '為鼓勵更多研究者參與，摘要投稿截止日期將延長至 2024年10月15日。敬請把握機會！', category: '最新消息' },
+            { date: '2024年07月20日', title: '主題講者名單公佈', content: '我們很榮幸地宣布，本次研討會已邀請到業界頂尖專家擔任主題講者，名單詳見講者介紹頁面。', category: '一般公告' },
+            { date: '2024年07月10日', title: '早鳥報名優惠開跑', content: '即日起至11月15日止，完成報名即可享有早鳥優惠價格，請勿錯過。', category: '一般公告' },
+            { date: '2024年07月05日', title: '網站正式上線', content: '研討會官方網站今日正式啟用，歡迎多加利用。', category: '一般公告' },
+            ...Array.from({ length: 16 }, (_, i) => ({
                 date: `2024年06月${20 - i}日`,
                 title: `歷史消息標題 #${i + 1}`,
-                content: `這是關於第 ${i + 1} 則歷史消息的詳細內容說明文字，用於填充版面以展示滾動功能。`
+                content: `這是關於第 ${i + 1} 則歷史消息的詳細內容說明文字，用於填充版面以展示滾動功能。`,
+                category: '一般公告'
             }))
         ];
         
-        function createNewsItemHTML(news) {
+        function createNewsItemHTML(news, index) {
+            // Define color palettes based on age (index)
+            const orangeBorderColors = ['border-orange-500', 'border-orange-400', 'border-orange-300', 'border-orange-200'];
+            const blueBorderColors = ['border-blue-500', 'border-blue-400', 'border-blue-300', 'border-blue-200'];
+            
+            const orangeTagBgColors = ['bg-orange-500', 'bg-orange-400', 'bg-orange-300', 'bg-orange-200'];
+            // Text color for tags: darker backgrounds get white text, lighter ones get dark text for readability
+            const orangeTagTextColors = ['text-white', 'text-white', 'text-orange-800', 'text-orange-800'];
+
+            let borderColorClass;
+            let tagHTML = '';
+            // Use the length of one of the arrays, assuming they're the same length
+            const colorIndex = Math.min(index, blueBorderColors.length - 1); 
+
+            if (news.category === '最新消息') {
+                borderColorClass = orangeBorderColors[colorIndex];
+                const tagBgClass = orangeTagBgColors[colorIndex];
+                const tagTextClass = orangeTagTextColors[colorIndex];
+                tagHTML = `<span class="${tagBgClass} ${tagTextClass} text-xs font-semibold mr-3 px-3 py-1 rounded-full">最新消息</span>`;
+            } else {
+                borderColorClass = blueBorderColors[colorIndex];
+            }
+
             return `
-                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500">
-                    <p class="text-sm text-gray-500 mb-2">${news.date}</p>
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 ${borderColorClass}">
+                    <div class="flex items-center mb-2">
+                        ${tagHTML}
+                        <p class="text-sm text-gray-500">${news.date}</p>
+                    </div>
                     <h3 class="text-xl font-bold text-gray-800 mb-3">${news.title}</h3>
                     <p class="text-gray-600">${news.content}</p>
                 </div>`;
@@ -649,11 +635,11 @@
         
         // Render news on the homepage
         const homepageNewsContainer = document.getElementById('news-list-homepage');
-        homepageNewsContainer.innerHTML = allNewsData.slice(0, 4).map(createNewsItemHTML).join('');
+        homepageNewsContainer.innerHTML = allNewsData.slice(0, 4).map((news, index) => createNewsItemHTML(news, index)).join('');
         
         // Render all news in the modal
         const modalNewsContainer = document.getElementById('news-list-modal');
-        modalNewsContainer.innerHTML = allNewsData.map(createNewsItemHTML).join('');
+        modalNewsContainer.innerHTML = allNewsData.map((news, index) => createNewsItemHTML(news, index)).join('');
 
         // Modal open/close logic
         const newsModal = document.getElementById('news-modal');
@@ -857,84 +843,147 @@
             });
         });
 
-        // --- Speaker Carousel Drag Logic ---
-        const sliderContainer = document.querySelector('#speakers .overflow-hidden');
-        if (sliderContainer) {
-            const innerSlider = sliderContainer.querySelector('.animate-scroll');
-            if (innerSlider) {
-                let isDown = false;
-                let startX;
-                let initialTranslateX;
+        // --- Speaker Pagination Carousel Logic ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const speakerCarousel = document.getElementById('speaker-carousel');
+            if (!speakerCarousel) return;
 
-                const style = document.createElement('style');
-                style.textContent = `
-                    #speakers .overflow-hidden.is-dragging { cursor: grabbing; cursor: -webkit-grabbing; user-select: none; }
-                    #speakers .overflow-hidden.is-dragging * { pointer-events: none; }
-                `;
-                document.head.append(style);
+            const speakerList = document.getElementById('speaker-list');
+            const paginationContainer = document.getElementById('speaker-pagination');
+            const originalSpeakers = Array.from(speakerList.children);
+            const speakerCount = originalSpeakers.length;
 
-                const startDragging = (e) => {
-                    isDown = true;
-                    sliderContainer.classList.add('is-dragging');
-                    
-                    const transformMatrix = window.getComputedStyle(innerSlider).transform;
-                    initialTranslateX = transformMatrix === 'none' ? 0 : parseInt(transformMatrix.split(',')[4], 10);
-                    
-                    innerSlider.classList.remove('animate-scroll');
-                    innerSlider.style.transform = `translateX(${initialTranslateX}px)`;
-                    
-                    startX = e.pageX;
-                    e.preventDefault();
-                };
+            let currentPage = 0;
+            let totalPages = 0;
+            let speakersPerPage = 4;
+            let autoplayInterval;
+            const AUTOPLAY_DELAY = 20000; // 20 seconds
+            let isTransitioning = false;
 
-                const stopDragging = () => {
-                    if (!isDown) return;
-                    isDown = false;
-                    sliderContainer.classList.remove('is-dragging');
-
-                    const finalTransform = innerSlider.style.transform;
-                    let finalTranslateX = finalTransform && finalTransform.includes('translateX') ? parseInt(finalTransform.match(/-?\d+/)[0], 10) : 0;
-                    
-                    const contentWidth = innerSlider.scrollWidth / 2;
-                    if (contentWidth > 0) {
-                        if (finalTranslateX > 0) {
-                            finalTranslateX = (finalTranslateX % contentWidth) - contentWidth;
-                        } else if (finalTranslateX < -contentWidth) {
-                            finalTranslateX %= contentWidth;
-                        }
-                    }
-
-                    innerSlider.style.transform = `translateX(${finalTranslateX}px)`;
-                    
-                    const animationDuration = 40;
-                    const completionRatio = contentWidth > 0 ? finalTranslateX / -contentWidth : 0;
-                    const delay = completionRatio * animationDuration;
-                    
-                    innerSlider.style.transform = '';
-                    innerSlider.style.animationDelay = `-${delay}s`;
-                    innerSlider.classList.add('animate-scroll');
-                };
-
-                const handleDrag = (e) => {
-                    if (!isDown) return;
-                    e.preventDefault();
-                    const walk = e.pageX - startX;
-                    innerSlider.style.transform = `translateX(${initialTranslateX + walk}px)`;
-                };
-
-                sliderContainer.addEventListener('mousedown', startDragging);
-                document.addEventListener('mouseup', stopDragging);
-                document.addEventListener('mousemove', handleDrag);
+            function getSpeakersPerPage() {
+                const width = window.innerWidth;
+                if (width < 640) return 1;    // Mobile: 1 speaker
+                if (width < 1024) return 2;   // Tablet: 2 speakers
+                return 4;                     // Desktop: 4 speakers
             }
-        }
+
+            function setupCarousel() {
+                clearInterval(autoplayInterval);
+                isTransitioning = false;
+                speakerList.style.transition = 'none'; // Disable transitions during setup
+                
+                speakersPerPage = getSpeakersPerPage();
+                totalPages = speakerCount > 0 ? Math.ceil(speakerCount / speakersPerPage) : 0;
+                
+                // Restore original speakers to remove any artifacts from previous setups
+                speakerList.innerHTML = '';
+                originalSpeakers.forEach(speaker => speakerList.appendChild(speaker.cloneNode(true)));
+                
+                const allSpeakerElements = Array.from(speakerList.children);
+
+                if (speakerCount > 0) {
+                    // Set the total width of the list container to accommodate all items.
+                    const totalListWidthPercent = (speakerCount / speakersPerPage) * 100;
+                    speakerList.style.width = `${totalListWidthPercent}%`;
+                    
+                    // Set the width of each individual speaker item relative to the new list width.
+                    const itemWidthPercent = 100 / speakerCount;
+                    allSpeakerElements.forEach(speaker => {
+                        speaker.style.width = `${itemWidthPercent}%`;
+                    });
+                }
+
+                // Create pagination with numbers
+                paginationContainer.innerHTML = '';
+                if (totalPages > 1) {
+                    for (let i = 0; i < totalPages; i++) {
+                        const button = document.createElement('button');
+                        button.textContent = i + 1;
+                        button.setAttribute('aria-label', `Go to page ${i + 1}`);
+                        button.className = 'w-8 h-8 flex items-center justify-center bg-gray-300 text-gray-700 rounded-full hover:bg-blue-600 hover:text-white transition-colors duration-300 font-semibold';
+                        button.addEventListener('click', () => {
+                            if (isTransitioning) return;
+                            goToPage(i);
+                            resetAutoplay();
+                        });
+                        paginationContainer.appendChild(button);
+                    }
+                }
+                
+                currentPage = 0;
+                updatePosition(false);
+                updatePagination();
+                startAutoplay();
+            }
+
+            function updatePosition(animate = true) {
+                if (animate) {
+                    speakerList.style.transition = 'transform 0.5s ease-in-out';
+                } else {
+                    speakerList.style.transition = 'none';
+                }
+                const offsetPercent = (currentPage * 100) * (speakersPerPage / speakerCount);
+                speakerList.style.transform = `translateX(-${offsetPercent}%)`;
+            }
+
+            function updatePagination() {
+                if (totalPages > 1) {
+                    const pageButtons = Array.from(paginationContainer.children);
+                    pageButtons.forEach((button, index) => {
+                        button.classList.toggle('bg-blue-600', index === currentPage);
+                        button.classList.toggle('text-white', index === currentPage);
+                        button.classList.toggle('bg-gray-300', index !== currentPage);
+                        button.classList.toggle('text-gray-700', index !== currentPage);
+                    });
+                }
+            }
+            
+            function goToPage(pageNumber) {
+                if (isTransitioning || pageNumber < 0 || pageNumber >= totalPages) return;
+                isTransitioning = true;
+                currentPage = pageNumber;
+                updatePosition();
+                updatePagination();
+            }
+
+            function advancePage() {
+                if (isTransitioning || totalPages <= 1) return;
+                
+                let nextPage = (currentPage + 1) % totalPages;
+                goToPage(nextPage);
+            }
+
+            speakerList.addEventListener('transitionend', () => {
+                isTransitioning = false;
+            });
+
+            function startAutoplay() {
+                if (totalPages <= 1) return;
+                autoplayInterval = setInterval(advancePage, AUTOPLAY_DELAY);
+            }
+
+            function resetAutoplay() {
+                clearInterval(autoplayInterval);
+                startAutoplay();
+            }
+
+            // Initial setup
+            setupCarousel();
+            
+            // Re-setup on window resize
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                // Use a timer to avoid rapid-fire resize events
+                resizeTimer = setTimeout(setupCarousel, 250);
+            });
+        });
 
         // --- Dynamic Footer Year ---
         const currentYear = new Date().getFullYear();
         document.querySelectorAll('footer .text-sm').forEach(el => {
-            el.innerHTML = `&copy; ${currentYear} 中原大學工業系-網路實驗室.`;
+            el.innerHTML = `&copy; ${currentYear} 人因工程研討會. 版權所有.`;
         });
     </script>
 </body>
-
 </html>
-
