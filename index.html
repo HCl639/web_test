@@ -35,6 +35,11 @@
       .news-modal.hidden .news-modal-content {
         transform: scale(0.95);
       }
+      @media (max-width: 640px) {
+            td:nth-child(2) {
+                white-space: nowrap;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
@@ -89,9 +94,9 @@
             <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('topbg.jpg')"></div>
             <div class="absolute inset-0 bg-black opacity-50"></div>
             <div class="relative z-10 text-center px-4">
-              <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">中原大學 人因工程研討會</h1>
+              <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">人因工程研討會</h1>
               <p class="text-lg md:text-2xl mb-2">人因工程與智慧韌性</p>
-              <p class="text-md md:text-xl font-light mb-8">2024年12月14日-15日 | 中原大學</p>
+              <p class="text-md md:text-xl font-light mb-8">2026年03月27日-29日 | 中原大學</p>
               <a href="registration.html" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
                 立即報名
               </a>
@@ -177,49 +182,49 @@
                             <thead>
                                 <tr class="bg-purple-100">
                                     <th class="p-4 border-b-2 border-purple-200 text-purple-800">活動</th>
-                                    <th class="p-4 border-b-2 border-purple-200 text-purple-800 text-center">時間</th>
+                                    <th class="p-4 border-b-2 border-purple-200 text-purple-800">時間</th>
                                     <th class="p-4 border-b-2 border-purple-200 text-purple-800">地點</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="hover:bg-purple-50">
                                     <td class="p-4 border-b border-purple-200">報到</td>
-                                    <td class="p-4 border-b border-purple-200 text-center">08:00 - 08:30</td>
+                                    <td class="p-4 border-b border-purple-200 min-w-fit">08:00 - 08:30</td>
                                     <td class="p-4 border-b border-purple-200"></td>
                                 </tr>
                                 <tr class="hover:bg-purple-50">
                                     <td class="p-4 border-b border-purple-200">開幕式</td>
-                                    <td class="p-4 border-b border-purple-200 text-center">08:30 - 09:00</td>
+                                    <td class="p-4 border-b border-purple-200 min-w-fit">08:30 - 09:00</td>
                                     <td class="p-4 border-b border-purple-200"></td>
                                 </tr>
                                 <tr class="hover:bg-purple-50">
-                                    <td class="p-4 border-b border-purple-200">Kenote 1</td>
-                                    <td class="p-4 border-b border-purple-200 text-center">09:00 - 09:35</td>
+                                    <td class="p-4 border-b border-purple-200">Keynote 1</td>
+                                    <td class="p-4 border-b border-purple-200 min-w-fit">09:00 - 09:35</td>
                                     <td class="p-4 border-b border-purple-200"></td>
                                 </tr>
                                 <tr class="hover:bg-purple-50">
-                                    <td class="p-4 border-b border-purple-200">Kenote 2</td>
-                                    <td class="p-4 border-b border-purple-200 text-center">09:35 - 10:10</td>
+                                    <td class="p-4 border-b border-purple-200">Keynote 2</td>
+                                    <td class="p-4 border-b border-purple-200 min-w-fit">09:35 - 10:10</td>
                                     <td class="p-4 border-b border-purple-200"></td>
                                 </tr>
                                 <tr class="hover:bg-purple-50">
                                     <td class="p-4 border-b border-purple-200">茶敘</td>
-                                    <td class="p-4 border-b border-purple-200 text-center">10:15 - 10:35</td>
+                                    <td class="p-4 border-b border-purple-200 min-w-fit">10:15 - 10:35</td>
                                     <td class="p-4 border-b border-purple-200"></td>
                                 </tr>
                                 <tr class="hover:bg-purple-50">
                                     <td class="p-4 border-b border-purple-200">論壇與學生論文發表</td>
-                                    <td class="p-4 border-b border-purple-200 text-center">10:35 - 12:05</td>
+                                    <td class="p-4 border-b border-purple-200 min-w-fit">10:35 - 12:05</td>
                                     <td class="p-4 border-b border-purple-200"></td>
                                 </tr>
                                 <tr class="hover:bg-purple-50">
                                     <td class="p-4 border-b border-purple-200">會員大會</td>
-                                    <td class="p-4 border-b border-purple-200 text-center">12:05 - 12:35</td>
+                                    <td class="p-4 border-b border-purple-200 min-w-fit">12:05 - 12:35</td>
                                     <td class="p-4 border-b border-purple-200"></td>
                                 </tr>
                                 <tr class="hover:bg-purple-50">
                                     <td class="p-4 border-b border-purple-200">午餐</td>
-                                    <td class="p-4 border-b border-purple-200 text-center">12:35 - 13:30</td>
+                                    <td class="p-4 border-b border-purple-200 min-w-fit">12:35 - 13:30</td>
                                     <td class="p-4 border-b border-purple-200"></td>
                                 </tr>
                             </tbody>
@@ -232,34 +237,34 @@
                             <thead>
                                 <tr class="bg-purple-100">
                                     <th class="p-4 border-b-2 border-purple-200 text-purple-800">活動</th>
-                                    <th class="p-4 border-b-2 border-purple-200 text-purple-800 text-center">時間</th>
+                                    <th class="p-4 border-b-2 border-purple-200 text-purple-800">時間</th>
                                     <th class="p-4 border-b-2 border-purple-200 text-purple-800">地點</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="hover:bg-purple-50">
                                     <td class="p-4 border-b border-purple-200">論壇與學生論文發表</td>
-                                    <td class="p-4 border-b border-purple-200 text-center">13:30 - 15:00</td>
+                                    <td class="p-4 border-b border-purple-200 min-w-fit">13:30 - 15:00</td>
                                     <td class="p-4 border-b border-purple-200"></td>
                                 </tr>
                                 <tr class="hover:bg-purple-50">
                                     <td class="p-4 border-b border-purple-200">茶敘</td>
-                                    <td class="p-4 border-b border-purple-200 text-center">15:00 - 15:25</td>
+                                    <td class="p-4 border-b border-purple-200 min-w-fit">15:00 - 15:25</td>
                                     <td class="p-4 border-b border-purple-200"></td>
                                 </tr>
                                 <tr class="hover:bg-purple-50">
                                     <td class="p-4 border-b border-purple-200">論壇與學生論文發表</td>
-                                    <td class="p-4 border-b border-purple-200 text-center">15:25 - 17:00</td>
+                                    <td class="p-4 border-b border-purple-200 min-w-fit">15:25 - 17:00</td>
                                     <td class="p-4 border-b border-purple-200"></td>
                                 </tr>
                                 <tr class="hover:bg-purple-50">
                                     <td class="p-4 border-b border-purple-200">自由活動</td>
-                                    <td class="p-4 border-b border-purple-200 text-center">17:00 - 18:00</td>
+                                    <td class="p-4 border-b border-purple-200 min-w-fit">17:00 - 18:00</td>
                                     <td class="p-4 border-b border-purple-200"></td>
                                 </tr>
                                 <tr class="hover:bg-purple-50">
                                     <td class="p-4 border-b border-purple-200">晚宴</td>
-                                    <td class="p-4 border-b border-purple-200 text-center">18:00 - 21:00</td>
+                                    <td class="p-4 border-b border-purple-200 min-w-fit">18:00 - 21:00</td>
                                     <td class="p-4 border-b border-purple-200"></td>
                                 </tr>
                             </tbody>
@@ -1093,4 +1098,3 @@
     </script>
 </body>
 </html>
-
