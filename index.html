@@ -275,69 +275,62 @@
         </section>
 
         <!-- Speakers Section -->
-        <section id="speakers" class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-[35px] font-bold text-gray-800">主題講者</h2>
-                    <p class="text-lg text-gray-500 mt-2">來自學術界與產業界的頂尖專家</p>
-                    <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
-                </div>
-                <div class="max-w-6xl mx-auto">
-                    <div id="speaker-carousel" class="relative overflow-hidden">
-                        <div id="speaker-list" class="flex transition-transform duration-500 ease-in-out">
-                            <!-- Speaker 1 -->
-                            <div class="flex-shrink-0 px-4">
-                                <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200 h-full flex flex-col">
-                                    <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
-                                    <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
-                                    <p class="text-gray-500 mb-3">中原大學 OO學系</p>
-                                    <p class="text-gray-600 text-sm flex-grow">專長於認知心理學與使用者體驗研究，致力於將學術理論應用於產品設計。</p>
-                                </div>
-                            </div>
-                            <!-- Speaker 2 -->
-                            <div class="flex-shrink-0 px-4">
-                                <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200 h-full flex flex-col">
-                                    <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
-                                    <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
-                                    <p class="text-gray-500 mb-3">中原大學 OO學系</p>
-                                    <p class="text-gray-600 text-sm flex-grow">擁有超過15年的業界經驗，領導團隊打造多款成功的數位產品。</p>
-                                </div>
-                            </div>
-                            <!-- Speaker 3 -->
-                            <div class="flex-shrink-0 px-4">
-                                <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200 h-full flex flex-col">
-                                    <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
-                                    <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
-                                    <p class="text-gray-500 mb-3">中原大學 OO學系</p>
-                                    <p class="text-gray-600 text-sm flex-grow">專注於高風險環境下的人為失誤分析，如航空與醫療領域。</p>
-                                </div>
-                            </div>
-                            <!-- Speaker 4 -->
-                            <div class="flex-shrink-0 px-4">
-                                <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200 h-full flex flex-col">
-                                    <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
-                                    <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
-                                    <p class="text-gray-500 mb-3">中原大學 OO學系</p>
-                                    <p class="text-gray-600 text-sm flex-grow">致力於推廣無障礙與通用設計理念，為不同能力的用戶創造友善的產品。</p>
-                                </div>
-                            </div>
-                            <!-- Speaker 5 -->
-                            <div class="flex-shrink-0 px-4">
-                                <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6 border border-gray-200 h-full flex flex-col">
-                                    <img class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" src="cycuiselogo.jpg" alt="講者照片">
-                                    <h3 class="text-xl font-bold text-gray-800">TBD 教授</h3>
-                                    <p class="text-gray-500 mb-3">中原大學 OO學系</p>
-                                    <p class="text-gray-600 text-sm flex-grow">專精於工廠自動化中的人機協作安全，以及工作環境的物理人因改善。</p>
-                                </div>
-                            </div>
+    <section id="speakers" class="py-16 md:py-24 bg-white">
+        <!-- 調整內邊距為 px-12 (更大) -->
+        <div class="container mx-auto px-12">
+            <div class="text-center mb-12">
+                <h2 class="text-[38px] font-extrabold text-gray-800 tracking-tight">主題講者</h2>
+                <p class="text-xl text-gray-500 mt-2">來自學術界與產業界的頂尖專家</p>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Speaker List (移除 max-w-4xl 限制，讓它延伸到父容器的最大寬度) -->
+            <div class="mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- 講者資料清單 1: 左圖右文佈局 -->
+                <div class="rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="bg-white p-6 sm:p-8 border border-gray-100 flex flex-col md:flex-row md:space-x-6 items-center md:items-start h-full rounded-xl">
+                        <!-- 講者照片 (左側) -->
+                        <div class="flex-shrink-0 mb-4 md:mb-0 w-32 h-32">
+                            <img class="w-32 h-32 rounded-full object-cover shadow-md border-4 border-blue-500/20" 
+                                 src="DRLI2.JPG" 
+                                 alt="講者照片: 李文進 教授">
+                        </div>
+                        <!-- 講者敘述 (右側) -->
+                        <div class="text-center md:text-left flex-grow">
+                            <h3 class="text-xl font-bold text-gray-900">李文進 教授</h3>
+                            <p class="text-md font-semibold text-blue-600 mt-0.5 mb-2">英國Cranfield University航太、交通與製造學院資深講師</p>
+                            <p class="text-gray-700 leading-relaxed text-sm">
+                                李教授致力於運用創新科技與人因分析方法，研發下一代飛行座艙人機系統整合、人工智能之運用與安全評估，並具備實際飛行經驗，擁有英國民航局頒發之飛行員執照。除教學與研究工作外，他亦積極參與多項國際學術會議，擔任工程心理學與認知人機互動國際會議（EPCE）議程主席、英國皇家航空協會院士(FRAeS)、英國高等教育學院資深院士(SFHEA)等職務，推動跨領域合作與知識交流，在航空人因與數位轉型領域具有深遠影響力。
+                            </p>
                         </div>
                     </div>
-                    <div id="speaker-pagination" class="flex justify-center mt-8 space-x-3">
-                        <!-- Pagination dots will be inserted here by JavaScript -->
+                </div>
+
+                <!-- 講者資料清單 4 -->
+                <div class="rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="bg-white p-6 sm:p-8 border border-gray-100 flex flex-col md:flex-row md:space-x-6 items-center md:items-start h-full rounded-xl">
+                        <!-- 講者照片 (左側) -->
+                        <div class="flex-shrink-0 mb-4 md:mb-0 w-32 h-32">
+                            <img class="w-32 h-32 rounded-full object-cover shadow-md border-4 border-blue-500/20" 
+                                 src="Dr.ROU.jpg" 
+                                 alt="講者照片: 饒培倫 教授">
+                        </div>
+                        <!-- 講者敘述 (右側) -->
+                        <div class="text-center md:text-left flex-grow">
+                            <h3 class="text-xl font-bold text-gray-900">饒培倫 教授</h3>
+                            <p class="text-md font-semibold text-blue-600 mt-0.5 mb-2">清華大學工業工程系教授</p>
+                            <p class="text-gray-700 leading-relaxed text-sm mb-2">主題：人與AI共生的文化與挑戰</p>
+                            <p class="text-gray-700 leading-relaxed text-sm">
+                                美國普度大學工業工程博士，中國國家自然科學基金委傑出青年，曾任清華大學工業工程系人因與工效學研究所所長，美國喬治亞理工大學、北卡羅萊納大學、韓國延世大學兼任教授，以及微軟中國研究院訪問學者、德國亞琛工業大學、日本中央大學訪問教授。主要研究領域：人因工程，人機互動，跨文化管理，用戶體驗。
+                            </p>
+                        </div>
                     </div>
                 </div>
+
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- Registration Section (Summary) -->
         <section id="registration" class="py-16 md:py-24 bg-gray-50">
@@ -1097,6 +1090,7 @@
     </script>
 </body>
 </html>
+
 
 
 
