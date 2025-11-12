@@ -45,48 +45,65 @@
 <body class="bg-gray-50 text-gray-800 font-sans">
 
     <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-      <div class="pl-[2px] pr-4 py-4 flex justify-between items-center">
-        <a href="#hero" class="flex items-center space-x-3">
-            <img src="https://via.placeholder.com/40x40.png?text=Logo" alt="研討會 Logo" class="h-10">
-            <span class="text-1xl md:text-2xl font-bold text-blue-600">第33屆中華民國人因工程學會年會<br class = md:hidden>暨學術研討會</span>
-        </a>
-        
-        <nav class="hidden md:flex space-x-3">
-          <a href="#news" class="text-xl text-gray-600 hover:text-blue-600 transition duration-300">最新消息</a>
-          <a href="#about" class="text-xl text-gray-600 hover:text-blue-600 transition duration-300">關於研討會</a>
-          <a href="#schedule" class="text-xl text-gray-600 hover:text-blue-600 transition duration-300">議程</a>
-          <a href="registration.html" class="text-xl text-gray-600 hover:text-blue-600 transition duration-300">報名資訊</a>
-          <a href="#submission" class="text-xl text-gray-600 hover:text-blue-600 transition duration-300">活動資訊</a>
-          <a href="#location" class="text-xl text-gray-600 hover:text-blue-600 transition duration-300">交通與住宿</a>
-          <a href="#faq" class="text-xl text-gray-600 hover:text-blue-600 transition duration-300">常見問題</a>
-          <a href="#sponsors" class="text-xl text-gray-600 hover:text-blue-600 transition duration-300">協力單位</a>
-          <a href="#contact" class="text-xl text-gray-600 hover:text-blue-600 transition duration-300">聯絡我們</a>
-        </nav>
-        
-        <div class="md:hidden">
-          <button id="mobile-menu-button" class="text-gray-800 focus:outline-none" aria-label="Toggle menu">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-          </button>
+    <header class="bg-white shadow-lg sticky top-0 z-40">
+        <!-- 導覽列內容: 標題靠左，按鈕靠右 -->
+        <div class="pl-[2px] pr-4 py-4 flex justify-between items-center">
+            
+            <!-- 網站標題/Logo -->
+            <a href="#hero" class="flex items-center space-x-3">
+                <!-- 圖片 Logo -->
+                <img src="https://via.placeholder.com/40x40.png?text=Logo" alt="研討會 Logo" class="h-10 rounded-lg">
+                <!-- 標題文字，在小螢幕上使用 <br> 換行 -->
+                <span class="text-xl md:text-2xl font-bold text-blue-700 leading-tight">
+                    第33屆中華民國人因工程學會年會<span class="md:hidden"><br></span>暨學術研討會
+                </span>
+            </a>
+
+            <!-- 漢堡圖示按鈕 (永遠顯示，用於開啟選單) -->
+            <div class="flex-shrink-0">
+                <button id="mobile-menu-button" class="text-gray-800 p-2 rounded-lg hover:bg-gray-100 focus:outline-none transition duration-150" aria-label="Toggle menu">
+                    <!-- 漢堡圖示 -->
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
-      </div>
-      
-      <div id="mobile-menu" class="hidden md:hidden bg-white">
-        <nav class="px-4 pt-2 pb-4 space-y-2">
-          <a href="#news" class="block text-gray-600 hover:text-blue-600 py-2">最新消息</a>
-          <a href="#about" class="block text-gray-600 hover:text-blue-600 py-2">關於研討會</a>
-          <a href="#schedule" class="block text-gray-600 hover:text-blue-600 py-2">議程</a>
-          <a href="registration.html" class="block text-gray-600 hover:text-blue-600 py-2">報名資訊</a>
-          <a href="#submission" class="block text-gray-600 hover:text-blue-600 py-2">活動資訊</a>
-          <a href="#location" class="block text-gray-600 hover:text-blue-600 py-2">交通與住宿</a>
-          <a href="#faq" class="block text-gray-600 hover:text-blue-600 py-2">常見問題</a>
-          <a href="#sponsors" class="block text-gray-600 hover:text-blue-600 py-2">協力單位</a>
-          <a href="#contact" class="block text-gray-600 hover:text-blue-600 py-2">聯絡我們</a>
-        </nav>
-      </div>
     </header>
+
+    <!-- 可收折的行動版選單內容 (fixed 定位，覆蓋全螢幕) -->
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-white z-50 overflow-y-auto shadow-2xl transition duration-300 ease-in-out">
+        
+        <!-- 選單標頭：標題和關閉按鈕 -->
+        <div class="flex justify-between items-center p-4 border-b bg-gray-50 shadow-sm">
+             <!-- 網站標題/Logo (與主 Header 結構保持一致) -->
+            <div class="flex items-center space-x-3">
+                <img src="https://via.placeholder.com/40x40.png?text=Logo" alt="研討會 Logo" class="h-10 rounded-lg">
+                <span class="text-xl font-bold text-blue-700 leading-tight">第33屆中華民國人因工程學會年會暨學術研討會</span>
+            </div>
+            
+            <!-- 關閉按鈕 (X 圖示) -->
+            <button id="close-mobile-menu-button" class="text-gray-800 p-2 rounded-lg hover:bg-gray-200 focus:outline-none transition duration-150" aria-label="Close menu">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- 實際的選單連結列表 (垂直排列，樣式優化) -->
+        <nav class="p-4 space-y-1">
+            <a href="#news" class="block text-xl font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-4 px-4 rounded-lg transition duration-200 border-b">最新消息</a>
+            <a href="violetevergarden.html" class="block text-xl font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-4 px-4 rounded-lg transition duration-200 border-b">大會組織</a>
+            <a href="#about" class="block text-xl font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-4 px-4 rounded-lg transition duration-200 border-b">關於研討會</a>
+            <a href="#schedule" class="block text-xl font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-4 px-4 rounded-lg transition duration-200 border-b">議程</a>
+            <a href="registration.html" class="block text-xl font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-4 px-4 rounded-lg transition duration-200 border-b">報名資訊</a>
+            <a href="#submission" class="block text-xl font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-4 px-4 rounded-lg transition duration-200 border-b">活動資訊</a>
+            <a href="#location" class="block text-xl font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-4 px-4 rounded-lg transition duration-200 border-b">交通與住宿</a>
+            <a href="#faq" class="block text-xl font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-4 px-4 rounded-lg transition duration-200 border-b">常見問題</a>
+            <a href="#sponsors" class="block text-xl font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-4 px-4 rounded-lg transition duration-200 border-b">協力單位</a>
+            <a href="#contact" class="block text-xl font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-4 px-4 rounded-lg transition duration-200">聯絡我們</a>
+        </nav>
+    </div>
 
     <main>
         <!-- Hero Section -->
@@ -122,7 +139,8 @@
             </div>
         </section>
 
-        <!-- About Section -->
+        
+        <!-- about Section -->
         <section id="about" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
@@ -163,7 +181,6 @@
                 </div>
             </div>
         </section>
-
 
         <!-- Schedule Section -->
         <section id="schedule" class="py-16 md:py-24 bg-gray-50">
@@ -662,9 +679,35 @@
         const openIconPath = "M4 6h16M4 12h16m-7 6h7";
         const closeIconPath = "M6 18L18 6M6 6l12 12";
 
-        menuButton.addEventListener('click', () => {
-            const isMenuOpen = !mobileMenu.classList.toggle('hidden');
-            menuIcon.setAttribute('d', isMenuOpen ? closeIconPath : openIconPath);
+        document.addEventListener('DOMContentLoaded', () => {
+            const openButton = document.getElementById('mobile-menu-button');
+            const closeButton = document.getElementById('close-mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // 1. 點擊開啟按鈕
+            openButton.addEventListener('click', () => {
+                // 移除 'hidden' 類別來顯示選單
+                mobileMenu.classList.remove('hidden');
+                // 額外：防止選單開啟時背景內容滾動
+                document.body.classList.add('overflow-hidden');
+            });
+
+            // 2. 點擊關閉按鈕
+            closeButton.addEventListener('click', () => {
+                // 添加 'hidden' 類別來隱藏選單
+                mobileMenu.classList.add('hidden');
+                // 恢復背景內容滾動
+                document.body.classList.remove('overflow-hidden');
+            });
+
+            // 3. (優化) 點擊選單中的任何連結後，自動關閉選單
+            const menuLinks = mobileMenu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    document.body.classList.remove('overflow-hidden');
+                });
+            });
         });
 
         // --- Smooth Scroll Logic for Navigation ---
@@ -1090,7 +1133,6 @@
     </script>
 </body>
 </html>
-
 
 
 
