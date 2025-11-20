@@ -52,7 +52,7 @@
             <!-- 網站標題/Logo -->
             <a href="#hero" class="flex items-center space-x-3">
                 <!-- 圖片 Logo -->
-                <img src="LOGO.jpg" alt="研討會 Logo" class="h-20 rounded-lg">
+                <img src="LOGO.jpg" alt="研討會 Logo" class="h-12 rounded-lg">
                 <!-- 標題文字，在小螢幕上使用 <br> 換行 -->
                 <span class="text-base md:text-2xl font-bold text-blue-700 leading-tight">
                     第33屆中華民國人因工程學會年會<span class="md:hidden"><br></span>暨學術研討會
@@ -75,10 +75,10 @@
     <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-white z-50 overflow-y-auto shadow-2xl transition duration-300 ease-in-out">
         
         <!-- 選單標頭：標題和關閉按鈕 -->
-        <div class="flex justify-between items-center p-4 border-b bg-gray-50 shadow-sm">
+        <div class="flex justify-between items-center p-4 border-b bg-gray-10 shadow-sm">
              <!-- 網站標題/Logo (與主 Header 結構保持一致) -->
             <div class="flex items-center space-x-3">
-                <img src="https://via.placeholder.com/40x40.png?text=Logo" alt="研討會 Logo" class="h-10 rounded-lg">
+                <img src="LOGO.jpg" alt="研討會 Logo" class="h-10 rounded-lg">
                 <span class="text-xl font-bold text-blue-700 leading-tight">第33屆中華民國人因工程學會年會暨學術研討會</span>
             </div>
             
@@ -104,8 +104,6 @@
             <a href="#contact" class="block text-xl font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 py-4 px-4 rounded-lg transition duration-200">聯絡我們</a>
         </nav>
     </div>
-
-    <main>
         <!-- Hero Section -->
         <section id="hero" class="relative h-screen flex items-center justify-center text-white">
             <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('topbg.jpg')"></div>
@@ -119,9 +117,10 @@
               </a>
             </div>
         </section>
-        
+
+    <main class="bg-no-repeat bg-cover bg-fixed" style="background-image: url('bgbg.png')">
         <!-- News Section -->
-        <section id="news" class="py-16 md:py-24 bg-gray-50">
+        <section id="news" class="py-16 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-[35px] font-bold text-gray-800">最新消息</h2>
@@ -139,8 +138,8 @@
             </div>
         </section>
         
-        <section id="violetevergarden" class="py-16 md:py-24 bg-gray-50">
-            <div class="max-w-7xl mx-auto bg-white shadow-xl rounded-lg p-6 md:p-10">
+        <section id="violetevergarden" class="py-16 md:py-24 ">
+            <div class="max-w-7xl mx-auto shadow-xl rounded-lg p-6 md:p-10">
 
             <header class="mb-8 border-b pb-4">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-blue-700 mb-2">大會組織人員名單</h2>
@@ -324,7 +323,7 @@
         </section>
         
         <!-- about Section -->
-        <section id="about" class="py-16 md:py-24 bg-white">
+        <section id="about" class="py-16 md:py-24 ">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-[35px] font-bold text-gray-800">關於研討會</h2>
@@ -366,7 +365,7 @@
         </section>
 
         <!-- Schedule Section -->
-        <section id="schedule" class="py-16 md:py-24 bg-gray-50">
+        <section id="schedule" class="py-16 md:py-24 ">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-[35px] font-bold text-gray-800">議程安排</h2>
@@ -377,8 +376,8 @@
                 <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                     <!-- Schedule for Day 1 -->
                     <div class="text-center">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">3/27 議程</h3>
-                        <table class="w-full text-left border-collapse">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Fri. 3/27 議程</h3>
+                        <table class="w-full text-left border-collapse bg-gray-100">
                             <thead>
                                 <tr class="bg-purple-100">
                                     <th class="p-4 border-b-2 border-purple-200 text-purple-800">活動</th>
@@ -422,8 +421,8 @@
                     </div>
                     <!-- Schedule for Day 2 -->
                     <div class="text-center">
-                         <h3 class="text-2xl font-bold text-gray-800 mb-4">3/28 議程</h3>
-                        <table class="w-full text-left border-collapse">
+                         <h3 class="text-2xl font-bold text-gray-800 mb-4">Sat. 3/28 議程</h3>
+                        <table class="w-full text-left border-collapse bg-gray-100">
                             <thead>
                                 <tr class="bg-purple-100">
                                     <th class="p-4 border-b-2 border-purple-200 text-purple-800">活動</th>
@@ -502,8 +501,8 @@
                     </div>
                     <!-- Schedule for Day 3 -->
                     <div class="text-center">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">3/29 議程</h3>
-                        <table class="w-full text-left border-collapse">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Sun. 3/29 議程</h3>
+                        <table class="w-full text-left border-collapse bg-gray-100">
                             <thead>
                                 <tr class="bg-purple-100">
                                     <th class="p-4 border-b-2 border-purple-200 text-purple-800">活動</th>
@@ -518,7 +517,7 @@
                                     <td class="p-4 border-b border-purple-200">莊敬大樓</td>
                                 </tr>
                                 <tr class="hover:bg-purple-50">
-                                    <td class="p-4 border-b border-purple-200">海報論文發表 1</td>
+                                    <td class="p-4 border-b border-purple-200">論壇與學生發表(I)</td>
                                     <td class="p-4 border-b border-purple-200 min-w-fit">08:30 - 10:00</td>
                                     <td class="p-4 border-b border-purple-200">莊敬大樓</td>
                                 </tr>
@@ -528,7 +527,7 @@
                                     <td class="p-4 border-b border-purple-200">莊敬大樓</td>
                                 </tr>
                                 <tr class="hover:bg-purple-50">
-                                    <td class="p-4 border-b border-purple-200">海報論文發表 2</td>
+                                    <td class="p-4 border-b border-purple-200">論壇與學生發表(II)</td>
                                     <td class="p-4 border-b border-purple-200 min-w-fit">10:20 - 11:50</td>
                                     <td class="p-4 border-b border-purple-200">莊敬大樓</td>
                                 </tr>
@@ -545,7 +544,7 @@
         </section>
 
         <!-- Speakers Section -->
-    <section id="speakers" class="py-16 md:py-24 bg-white">
+    <section id="speakers" class="py-16 md:py-24 ">
         <!-- 調整內邊距為 px-12 (更大) -->
         <div class="container mx-auto px-12">
             <div class="text-center mb-12">
@@ -603,7 +602,7 @@
     </section>
 
         <!-- Registration Section (Summary) -->
-        <section id="registration" class="py-16 md:py-24 bg-gray-50">
+        <section id="registration" class="py-16 md:py-24 ">
             <div class="container mx-auto px-6 text-center">
                 <div class="mb-12">
                     <h2 class="text-[35px] font-bold text-gray-800">報名資訊</h2>
@@ -654,7 +653,7 @@
         </section>
 
         <!-- Submission Section -->
-        <section id="submission" class="py-16 md:py-24 bg-white">
+        <section id="submission" class="py-16 md:py-24 ">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-[35px] font-bold text-gray-800">活動資訊</h2>
@@ -726,7 +725,7 @@
         </section>
 
         <!-- Location & Accommodation Section -->
-        <section id="location" class="py-16 md:py-24 bg-gray-50">
+        <section id="location" class="py-16 md:py-24 ">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-[35px] font-bold text-gray-800">交通與住宿</h2>
@@ -764,7 +763,7 @@
         </section>
 
         <!-- FAQ Section -->
-        <section id="faq" class="py-16 md:py-24 bg-white">
+        <section id="faq" class="py-16 md:py-24 ">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-[35px] font-bold text-gray-800">常見問題</h2>
@@ -816,7 +815,7 @@
         </section>
 
         <!-- About Section -->
-        <section id="sponsors" class="py-16 md:py-24 bg-white">
+        <section id="sponsors" class="py-16 md:py-24 ">
             <div class="container mx-auto px-6">
                 <div class="max-w-5xl mx-auto space-y-20">
                     <!-- Subsection 3: Sponsors and Partners -->
@@ -879,11 +878,11 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-16 md:py-24 bg-gray-50">
+        <section id="contact" class="py-16 md:py-24 ">
             <div class="container mx-auto px-6 text-center">
                 <div class="mb-12">
                     <h2 class="text-[35px] font-bold text-gray-800">聯絡我們</h2>
-                    <p class="text-lg text-gray-500 mt-2">若有任何問題，歡迎隨時與我們聯繫</p>
+                    <p class="text-lg text-black mt-2">若有任何問題，歡迎隨時與我們聯繫</p>
                     <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
                 </div>
                 <div class="max-w-xl mx-auto text-xl text-gray-700">
