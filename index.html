@@ -60,15 +60,31 @@
                 </span>
             </a>
 
-            <!-- 漢堡圖示按鈕 (永遠顯示，用於開啟選單) -->
-            <div class="flex-shrink-0">
+            <nav class="p-4 space-y-1 hidden md:inline-block ">
+                <a href="#news" class="**inline-block** text-lg font-semibold text-gray-700 hover:text-blue-600 py-4 px-1 rounded-lg transition duration-200 ">最新消息</a>
+                <a href="#violetevergarden" class="**inline-block** text-lg font-semibold text-gray-700 hover:text-blue-600 py-4 px-1 rounded-lg transition duration-200 ">大會組織</a>
+                <a href="#about" class="**inline-block** text-lg font-semibold text-gray-700 hover:text-blue-600 py-4 px-1 rounded-lg transition duration-200 ">關於研討會</a>
+                <a href="#schedule" class="**inline-block** text-lg font-semibold text-gray-700 hover:text-blue-600 py-4 px-1 rounded-lg transition duration-200 ">議程</a>
+                <a href="registration.html" class="**inline-block** text-lg font-semibold text-gray-700 hover:text-blue-600 py-1 px-0 rounded-lg transition duration-200 ">報名資訊</a>
+                <a href="" class="**inline-block** text-lg font-semibold text-gray-700 hover:text-blue-600 py-1 px-0 rounded-lg transition duration-200 ">論文投稿</a>
+                <a href="#submission" class="**inline-block** text-lg font-semibold text-gray-700 hover:text-blue-600 py-4 px-1 rounded-lg transition duration-200 ">活動資訊</a>
+                <div></div>
+                <a href="#location" class="**inline-block** text-lg font-semibold text-gray-700 hover:text-blue-600 py-4 px-1 rounded-lg transition duration-200 ">交通與住宿</a>
+                <a href="#faq" class="**inline-block** text-lg font-semibold text-gray-700 hover:text-blue-600 py-4 px-1 rounded-lg transition duration-200 ">常見問題</a>
+                <a href="#sponsors" class="**inline-block** text-lg font-semibold text-gray-700 hover:text-blue-600 py-4 px-1 rounded-lg transition duration-200 ">協力單位</a>
+                <a href="#contact" class="**inline-block** text-lg font-semibold text-gray-700 hover:text-blue-600 py-4 px-1 rounded-lg transition duration-200">聯絡我們</a>
+            </nav>
+            <!-- 漢堡圖示按鈕 (永遠顯示，用於開啟選單) --> 
+             
+            <div class="flex-shrink-0 md:hidden">
                 <button id="mobile-menu-button" class="text-gray-800 p-2 rounded-lg hover:bg-gray-100 focus:outline-none transition duration-150" aria-label="Toggle menu">
-                    <!-- 漢堡圖示 -->
+                    <!--漢堡圖示-->
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
                 </button>
             </div>
+
         </div>
     </header>
 
@@ -111,7 +127,8 @@
             <div class="absolute inset-0 bg-black opacity-50"></div>
             <div class="relative z-10 text-center px-4">
               <h1 class="text-3xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">第33屆<br>中華民國人因工程學會年會<br>暨學術研討會</h1>
-              <p class="text-lg md:text-2xl mb-2">人因工程與智慧韌性</p>
+              <br>
+              <p class="text-lg md:text-6xl mb-2 font-extrabold">人因工程與智慧韌性</p>
               <p class="text-md md:text-xl font-light mb-8">2026年03月27日-29日 | 中原大學</p>
               <a href="registration.html" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
                 立即報名
@@ -328,7 +345,7 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-[35px] font-bold text-gray-800">關於研討會</h2>
-                    <p class="text-lg text-gray-500 mt-2">人因工程與智慧韌性</p>
+                    <p class="text-2xl font-bold text-gray-500 mt-2">人因工程與智慧韌性</p>
                     <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
                 </div>
 
@@ -377,13 +394,13 @@
                 <div class="max-w-6xl mx-auto grid grid-cols-1 gap-12 items-start">
                     <!-- Schedule for Day 1 -->
                     <div class="text-center">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Fri. 3/27 議程</h3>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">3/27 (五) 議程</h3>
                         <table class="w-full text-left border-collapse bg-gray-100">
                             <thead>
                                 <tr class="bg-purple-100">
-                                    <th class="p-4 border-b-2 border-purple-200 text-purple-800 w-2/5 text-center">活動</th>
+                                    <th class="p-4 border-b-2 border-purple-200 text-purple-800 w-3/5 text-center">活動</th>
                                     <th class="p-4 border-b-2 border-purple-200 text-purple-800 w-1/5 text-center">時間</th>
-                                    <th class="p-4 border-b-2 border-purple-200 text-purple-800 w-2/5 text-center">地點</th>
+                                    <th class="p-4 border-b-2 border-purple-200 text-purple-800 w-1/5 text-center">地點</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -393,7 +410,7 @@
                                     <td class="p-4 border-b border-purple-200">莊敬大樓</td>
                                 </tr>
                                 <tr class="hover:bg-purple-50 text-center">
-                                    <td class="p-4 border-b border-purple-200">論文競賽</td>
+                                    <td class="p-4 border-b border-purple-200">學生論文競賽</td>
                                     <td class="p-4 border-b border-purple-200">13:30 - 15:00</td>
                                     <td class="p-4 border-b border-purple-200">莊敬大樓</td>
                                 </tr>
@@ -403,7 +420,7 @@
                                     <td class="p-4 border-b border-purple-200">莊敬大樓</td>
                                 </tr>
                                 <tr class="hover:bg-purple-50 text-center">
-                                    <td class="p-4 border-b border-purple-200">論文競賽</td>
+                                    <td class="p-4 border-b border-purple-200">學生論文競賽</td>
                                     <td class="p-4 border-b border-purple-200 ">15:30 - 17:00</td>
                                     <td class="p-4 border-b border-purple-200">莊敬大樓</td>
                                 </tr>
@@ -422,13 +439,13 @@
                     </div>
                     <!-- Schedule for Day 2 -->
                     <div class="text-center">
-                         <h3 class="text-2xl font-bold text-gray-800 mb-4">Sat. 3/28 議程</h3>
+                         <h3 class="text-2xl font-bold text-gray-800 mb-4">3/28 (六) 議程</h3>
                         <table class="w-full text-left border-collapse bg-gray-100">
                             <thead>
                                 <tr class="bg-purple-100">
-                                    <th class="p-4 border-b-2 border-purple-200 text-purple-800 w-2/5 text-center">活動</th>
+                                    <th class="p-4 border-b-2 border-purple-200 text-purple-800 w-3/5 text-center">活動</th>
                                     <th class="p-4 border-b-2 border-purple-200 text-purple-800 w-1/5 text-center">時間</th>
-                                    <th class="p-4 border-b-2 border-purple-200 text-purple-800 w-2/5 text-center">地點</th>
+                                    <th class="p-4 border-b-2 border-purple-200 text-purple-800 w-1/5 text-center">地點</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -443,17 +460,17 @@
                                     <td class="p-4 border-b border-purple-200">秀德廳</td>
                                 </tr>
                                 <tr class="hover:bg-purple-50 text-center">
-                                    <td class="p-4 border-b border-purple-200 text-xs md:text-base">人因專業落實於事業單位的現況與展望論壇<br>王安祥立委/教授</td>
+                                    <td class="p-4 border-b border-purple-200 text-xs md:text-base">人因專業落實於事業單位的現況與展望論壇<br>王安祥教授</td>
                                     <td class="p-4 border-b border-purple-200 ">08:30 - 09:20</td>
                                     <td class="p-4 border-b border-purple-200">秀德廳</td>
                                 </tr>
                                 <tr class="hover:bg-purple-50 text-center">
-                                    <td class="p-4 border-b border-purple-200">主題演講 李文進教授</td>
+                                    <td class="p-4 border-b border-purple-200 text-xs md:text-base">Human Factors in Digital Aviation: From Proof of Concept to Certification<br>主題演講 李文進教授</td>
                                     <td class="p-4 border-b border-purple-200 ">09:20 - 10:00</td>
                                     <td class="p-4 border-b border-purple-200">秀德廳</td>
                                 </tr>
                                 <tr class="hover:bg-purple-50 text-center">
-                                    <td class="p-4 border-b border-purple-200">主題演講 饒培倫教授</td>
+                                    <td class="p-4 border-b border-purple-200">人與AI共生的文化與挑戰<br>主題演講 饒培倫教授</td>
                                     <td class="p-4 border-b border-purple-200 ">10:00 - 10:40</td>
                                     <td class="p-4 border-b border-purple-200">秀德廳</td>
                                 </tr>
@@ -468,13 +485,13 @@
                                     <td class="p-4 border-b border-purple-200">秀德廳</td>
                                 </tr>
                                 <tr class="hover:bg-purple-50 text-center">
-                                    <td class="p-4 border-b border-purple-200">午餐與休息時間</td>
+                                    <td class="p-4 border-b border-purple-200">午餐/人因學會會員大會與休息時間</td>
                                     <td class="p-4 border-b border-purple-200 ">12:30 - 14:00</td>
                                     <td class="p-4 border-b border-purple-200">莊敬大樓</td>
                                 </tr>
                                 <tr class="hover:bg-purple-50 text-center">
                                     <td class="p-4 border-b border-purple-200">論壇(I+II+III)</td>
-                                    <td class="p-4 border-b border-purple-200">14:00 - 15:30</td>
+                                    <td class="p-4 border-b border-purple-200">14:00 - 15:15</td>
                                     <td class="p-4 border-b border-purple-200">莊敬大樓</td>
                                 </tr>
                                 <tr class="hover:bg-purple-50 text-center">
@@ -512,13 +529,13 @@
                     </div>
                     <!-- Schedule for Day 3 -->
                     <div class="text-center">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Sun. 3/29 議程</h3>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">3/29 (日) 議程</h3>
                         <table class="w-full text-left border-collapse bg-gray-100">
                             <thead>
                                 <tr class="bg-purple-100">
-                                    <th class="p-4 border-b-2 border-purple-200 text-purple-800 w-2/5 text-center">活動</th>
+                                    <th class="p-4 border-b-2 border-purple-200 text-purple-800 w-3/5 text-center">活動</th>
                                     <th class="p-4 border-b-2 border-purple-200 text-purple-800 w-1/5 text-center">時間</th>
-                                    <th class="p-4 border-b-2 border-purple-200 text-purple-800 w-2/5 text-center">地點</th>
+                                    <th class="p-4 border-b-2 border-purple-200 text-purple-800 w-1/5 text-center">地點</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -579,7 +596,8 @@
                         <!-- 講者敘述 (右側) -->
                         <div class="text-center md:text-left flex-grow">
                             <h3 class="text-xl font-bold text-gray-900">李文進 教授</h3>
-                            <p class="text-md font-semibold text-blue-600 mt-0.5 mb-2">英國Cranfield University航太、交通與製造學院資深講師</p>
+                            <p class="text-md font-semibold text-blue-600 mt-0.5 mb-2">Course Director on Safety and Human Factors in Aviation MSc, Cranfield University, United Kingdom</p>
+                            <p class="text-gray-700 leading-relaxed text-sm mb-2">主題：Human Factors in Digital Aviation: From Proof of Concept to Certification</p>
                             <p class="text-gray-700 leading-relaxed text-sm">
                                 李教授致力於運用創新科技與人因分析方法，研發下一代飛行座艙人機系統整合、人工智能之運用與安全評估，並具備實際飛行經驗，擁有英國民航局頒發之飛行員執照。除教學與研究工作外，他亦積極參與多項國際學術會議，擔任工程心理學與認知人機互動國際會議（EPCE）議程主席、英國皇家航空協會院士(FRAeS)、英國高等教育學院資深院士(SFHEA)等職務，推動跨領域合作與知識交流，在航空人因與數位轉型領域具有深遠影響力。
                             </p>
@@ -694,9 +712,14 @@
                                 <li><strong>研討會舉辦日期：</strong> 2026.03.28</li>
                             </ul>
                             <div class="pt-4 text-center">
+                                <a class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                                    Cooming Soon
+                                </a>
+                                <!--
                                 <a href="submission-symposium.html" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
                                     查看活動詳情
                                 </a>
+                                -->
                             </div>
                             
                         </div>
@@ -712,9 +735,14 @@
                                 <li><strong>頒獎典禮：</strong> 2026.03.28</li>
                             </ul>
                             <div class="pt-4 text-center">
+                                <a class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                                    Cooming Soon
+                                </a>
+                                <!--
                                 <a href="submission-paper.html" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
                                     查看競賽詳情
                                 </a>
+                                -->
                             </div>
                             
                         </div>
@@ -731,9 +759,14 @@
                                 <li><strong>頒獎典禮：</strong> 2026.03.28(晚宴)</li>
                             </ul>
                             <div class="pt-4 text-center">
+                                <a class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                                    Cooming Soon
+                                </a>
+                                <!--
                                 <a href="submission-design.html" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
                                     查看競賽詳情
                                 </a>
+                                -->
                             </div>
                             
                         </div>
@@ -1034,8 +1067,8 @@
         
         // --- NEWS DATA & LOGIC ---
         const allNewsData = [
-            { date: '2025年09月20日', title: '網站上線', content: '研討會官方網站今日正式啟用，歡迎多加利用。', category: '最新消息' },
-            { date: '2025年11月01日', title: '論文徵稿', content: '自2025/11/01起至2026/02/10開放論文徵稿囉，歡迎大家踴躍投稿', category: '一般公告' },
+            { date: '2025年12月2日', title: '網站上線', content: '研討會官方網站今日正式啟用，歡迎多加利用。', category: '一般公告' },
+            { date: '2025年12月22日', title: '論文徵稿', content: '自2025/12/22起至2026/02/09開放論文徵稿囉，歡迎大家踴躍投稿', category: '最新消息' },
         ];
         
         function createNewsItemHTML(news, index) {
@@ -1134,10 +1167,9 @@
                 { q: '研討會的報名費用包含哪些項目？', a: '報名費用包含會議手冊、兩日午餐、會議期間的茶點及一份研討會紀念品。' },
                 { q: '是否提供學生優惠？', a: '是的，我們為在學學生（需出示有效學生證）提供優惠的報名價格。詳細費用請參考「報名資訊」區塊的說明。' },
             ],
-            'tab-submission-faq': Array.from({ length: 40 }, (_, i) => ({
-                q: `投稿相關問題 #${i + 1}：這個問題的標題是什麼？`,
-                a: `這是第 ${i + 1} 個投稿相關問題的詳細解答。這裡可以放入更多關於論文格式、審查流程、截止日期等說明文字。`
-            })),
+            'tab-submission-faq':[
+
+            ],
             'tab-general-faq': [
                 { q: '會議現場是否提供網路？', a: '是的，會議全區將提供免費的 Wi-Fi 無線網路供所有與會者使用。' },
                 { q: '現場是否有提供餐點？', a: '是的，報名費用中已包含兩日的午餐以及會議期間的茶點。' },
@@ -1420,7 +1452,6 @@
     </script>
 </body>
 </html>
-
 
 
 
