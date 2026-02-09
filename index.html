@@ -889,9 +889,9 @@
                             <p>完成報名與投稿程序之論文經初審完畢後，將於本次大會網站公告入圍名單與口試競賽時程，並依據報名資料以電子郵件方式分別通知參賽學生。</p>
                             
                             <h3 class="text-2xl font-semibold text-gray-800 pt-4">重要時程</h3>
-                             <ul class="list-disc list-inside space-y-2">
+                            <ul class="list-disc list-inside space-y-2">
                                 <li><strong>開始投稿和線上報名：</strong> 2026.01.27</li>
-                                <li><strong>徵稿截止：</strong> 2026.02.09</li>
+                                <li><strong>(更新)徵稿截止：</strong> <span class="line-through">2026.02.09</span> <span class="text-red-600 font-bold">2026.02.13</span></li>
                                 <li><strong>決賽名單公佈：</strong> 2026.02.16</li>
                                 <li><strong>決賽：</strong> 2026.03.27</li>
                                 <li><strong>頒獎典禮：</strong> 2026.03.28</li>
@@ -954,7 +954,7 @@
                             
                             <h3 class="text-2xl font-semibold text-gray-800 pt-4">重要時程</h3>
                              <ul class="list-disc list-inside space-y-2">
-                                <li><strong>創意徵稿和線上報名：</strong> 2025.03.06</li>
+                                <li><strong>創意徵稿和線上報名：</strong> 2026.03.06</li>
                                 <li><strong>資格審查：</strong> 2026.03.09 ~ 2026.03.13</li>
                                 <li><strong>初賽入圍公告：</strong> 2026.03.14</li>
                                 <li><strong>決賽：</strong> 2026.03.20</li>
@@ -1353,8 +1353,9 @@
         
         // --- NEWS DATA & LOGIC ---
         const allNewsData = [
-            { date: '2025年12月22日', title: '徵稿期限延長', content: '原訂本次研討會投稿截止日期為2026/02/09。為鼓勵更多學生踴躍投稿並參與年會，同時提供投稿者更充裕的準備時間，主辦單位決定延長徵稿期限至2026/02/13。<br>配合徵稿延期，論文審查結果通知日期亦調整為2026/02/23。', category: '最新消息' },
-            { date: '2025年12月22日', title: ' 早鳥報名時間更新', content: '2026/02/26前繳交報名註冊費，即可獲得早鳥優惠，詳情可至報名資訊查看，歡迎踴躍報名', category: '最新消息' },
+            { date: '2026年02月09日', title: '學生論文競賽報名期限延長', content: '為鼓勵更多學生參與學生論文競賽，本屆研討會原訂於2026/02/09截止的報名期限，現調整延長至2026/02/13。歡迎研究所與大學部同學們踴躍報名參加！', category: '最新消息' },
+            { date: '2026年02月09日', title: '徵稿期限延長', content: '原訂本次研討會投稿截止日期為2026/02/09。為鼓勵更多學生踴躍投稿並參與年會，同時提供投稿者更充裕的準備時間，主辦單位決定延長徵稿期限至2026/02/13。<br>配合徵稿延期，論文審查結果通知日期亦調整為2026/02/23。', category: '最新消息' },
+            { date: '2026年02月09日', title: '早鳥報名時間更新', content: '2026/02/26前繳交報名註冊費，即可獲得早鳥優惠，詳情可至報名資訊查看，歡迎踴躍報名', category: '最新消息' },
             { date: '2026年01月15日', title: '早鳥報名', content: '若在2026/02/10前報名，即可獲得早鳥優惠，詳情可至報名資訊查看，歡迎踴躍報名', category: '一般公告' },
             { date: '2025年12月22日', title: '論文徵稿', content: '自2025/12/22起至2026/02/09開放論文徵稿囉，歡迎大家踴躍投稿', category: '一般公告' },
             { date: '2025年12月2日', title: '網站上線', content: '研討會官方網站今日正式啟用，歡迎多加利用。', category: '一般公告' },
@@ -1397,7 +1398,7 @@
         
         // Render news on the homepage
         const homepageNewsContainer = document.getElementById('news-list-homepage');
-        homepageNewsContainer.innerHTML = allNewsData.slice(0, 2).map((news, index) => createNewsItemHTML(news, index)).join('');
+        homepageNewsContainer.innerHTML = allNewsData.slice(0, 3).map((news, index) => createNewsItemHTML(news, index)).join('');
         
         // Render all news in the modal
         const modalNewsContainer = document.getElementById('news-list-modal');
@@ -1742,6 +1743,7 @@
     </script>
 </body>
 </html>
+
 
 
 
