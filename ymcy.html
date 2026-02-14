@@ -857,17 +857,8 @@
 
             <section id="news" class="py-12 border-b-4 border-gray-300 mb-20">
                 <h2 class="text-4xl font-black text-gray-800 mb-8 pl-6 border-l-8 border-gray-800 uppercase tracking-tighter">最新消息</h2>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-white p-8 rounded-3xl shadow-lg border-l-8 border-yellow-400 hover:scale-[1.02] transition-transform">
-                        <p class="text-xs font-bold text-gray-400 mb-2">2025.08.04</p>
-                        <h4 class="text-xl font-black text-blue-600 mb-3 hover:underline cursor-pointer">「寶島千里行走透透」系友見面會活動回顧</h4>
-                        <p class="text-gray-500 text-sm line-clamp-2">工業與系統工程學系已邁入第 60 個年頭，我們誠摯邀請您參加...</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-3xl shadow-lg border-l-8 border-purple-400 hover:scale-[1.02] transition-transform">
-                        <p class="text-xs font-bold text-gray-400 mb-2">2024.12.02</p>
-                        <h4 class="text-xl font-black text-purple-600 mb-3 hover:underline cursor-pointer">傑出校友周霞麗學姐專訪：系統思維與公益</h4>
-                        <p class="text-gray-500 text-sm line-clamp-2">從基層到台經院副院長，學姐強調工工系的「系統思維」極其重要...</p>
-                    </div>
+                <div id="news-container" class="grid md:grid-cols-2 gap-8">
+                    <p class="text-gray-400 animate-pulse">正在從雲端同步最新消息...</p>
                 </div>
             </section>
 
@@ -1150,34 +1141,85 @@
     </div>
 
     <script>
-    function toggleVision() {
-        // 1. 抓取要顯示/隱藏的內容區塊
-        const content = document.getElementById('vision-more-content');
-        // 2. 抓取按鈕文字與箭頭圖示
-        const btnText = document.getElementById('vision-btn-text');
-        const arrow = document.getElementById('vision-arrow');
+        function toggleVision() {
+            // 1. 抓取要顯示/隱藏的內容區塊
+            const content = document.getElementById('vision-more-content');
+            // 2. 抓取按鈕文字與箭頭圖示
+            const btnText = document.getElementById('vision-btn-text');
+            const arrow = document.getElementById('vision-arrow');
 
-        if (!content) {
-            console.error("找不到 id='vision-more-content' 的區塊！");
-            return;
+            if (!content) {
+                console.error("找不到 id='vision-more-content' 的區塊！");
+                return;
+            }
+
+            // 3. 切換 hidden 類別
+            if (content.classList.contains('hidden')) {
+                // 執行展開
+                content.classList.remove('hidden');
+                btnText.innerText = 'Collapse'; // 更改按鈕文字
+                arrow.classList.add('rotate-180'); // 旋轉箭頭
+            } else {
+                // 執行收合
+                content.classList.add('hidden');
+                btnText.innerText = 'Expand'; // 恢復按鈕文字
+                arrow.classList.remove('rotate-180'); // 恢復箭頭角度
+                
+                // 可選：收合後自動滾動回頂部，避免畫面跑掉
+                document.getElementById('vision').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+        // 1. 貼上你從 Google Sheets 取得的 CSV 網址
+        const NEWS_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQMHg9k6VveD9PaVkGdxI_g9Y_EiUSm3Rm0_BkppvF16BUl3A3y0qQ2KwwHpzLyWs-47kueFau0tWOJ/pub?output=csv";
+
+        async function loadNewsFromSheet() {
+            try {
+                const response = await fetch(NEWS_CSV_URL);
+                const data = await response.text();
+                
+                // 2. 解析 CSV (處理換行與逗號)
+                // split('\n') 拆分行，slice(1) 跳過第一列標題
+                const rows = data.split('\n').slice(1); 
+                const container = document.getElementById('news-container');
+                
+                if (rows.length === 0 || rows[0].trim() === "") {
+                    container.innerHTML = "<p class='text-gray-400'>目前尚無消息</p>";
+                    return;
+                }
+
+                let htmlContent = "";
+
+                rows.forEach((row, index) => {
+                    if (row.trim() === "") return;
+
+                    // 根據你 Google Sheet 的順序：date, title, content
+                    // 注意：如果內容中有逗號，簡單的 split(',') 可能會出錯，建議內容盡量避開半形逗號
+                    const [date, title, content] = row.split(',');
+
+                    // 3. 根據你原本要求的樣式進行渲染
+                    // 偶數和奇數卡片可以使用不同的邊框顏色 (黃色/紫色交替)
+                    const borderColor = index % 2 === 0 ? 'border-yellow-400' : 'border-purple-400';
+                    const textColor = index % 2 === 0 ? 'text-blue-600' : 'text-purple-600';
+
+                    htmlContent += `
+                        <div class="bg-white p-8 rounded-3xl shadow-lg border-l-8 ${borderColor} hover:scale-[1.02] transition-transform">
+                            <p class="text-xs font-bold text-gray-400 mb-2">${date || '無日期'}</p>
+                            <h4 class="text-xl font-black ${textColor} mb-3 hover:underline cursor-pointer">${title || '無標題'}</h4>
+                            <p class="text-gray-500 text-sm line-clamp-3">${content || ''}</p>
+                        </div>
+                    `;
+                });
+
+                container.innerHTML = htmlContent;
+
+            } catch (error) {
+                console.error("載入消息失敗:", error);
+                document.getElementById('news-container').innerHTML = "<p class='text-red-400'>連線失敗，請檢查網路狀態或 CSV 網址。</p>";
+            }
         }
 
-        // 3. 切換 hidden 類別
-        if (content.classList.contains('hidden')) {
-            // 執行展開
-            content.classList.remove('hidden');
-            btnText.innerText = 'Collapse'; // 更改按鈕文字
-            arrow.classList.add('rotate-180'); // 旋轉箭頭
-        } else {
-            // 執行收合
-            content.classList.add('hidden');
-            btnText.innerText = 'Expand'; // 恢復按鈕文字
-            arrow.classList.remove('rotate-180'); // 恢復箭頭角度
-            
-            // 可選：收合後自動滾動回頂部，避免畫面跑掉
-            document.getElementById('vision').scrollIntoView({ behavior: 'smooth' });
-        }
-    }
+        // 頁面載入完成後執行
+        window.addEventListener('DOMContentLoaded', loadNewsFromSheet);
     </script>
 </body>
 </html>
