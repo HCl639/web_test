@@ -563,7 +563,12 @@
                             <h4 class="text-3xl font-bold text-gray-800 mb-6 text-left">檔名與上傳</h4>
                             <ul class="list-disc list-inside">
                                 <li>檔名格式:PosterID_第一作者姓名。</li>
-                                <li>請於3/13(Fri.)23:59前上傳至投稿系統。</li>
+                                <li>
+                                    請於3/13(Fri.)23:59前將檔案寄至 
+                                    est2026.contact@gmail.com，信中備註論文編號和題目。
+                                    (更新寄至est2026.contact@gmail.com，
+                                    <span class="text-red-600">信中備註論文編號和題目</span>)
+                                </li>
                             </ul>
                         </div>
 
@@ -1351,6 +1356,40 @@
                                 </div>
                             </div>
 
+                            <div class="bg-emerald-50 p-5 rounded-xl border border-emerald-200 mt-8">
+                                <p class="font-bold text-emerald-800 mb-4 flex items-center">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    自行前往 (Google 地圖導航)
+                                </p>
+
+                                <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+                                    <div class="flex flex-col items-center">
+                                        <div class="bg-white p-2 rounded-lg shadow-sm border border-emerald-100 w-32 h-32">
+                                            <img src="mapQR.png" alt="導航 QR Code" class="w-full h-full object-contain">
+                                        </div>
+                                        <p class="text-[12px] text-gray-500 mt-2 font-medium">手機掃描立即導航</p>
+                                    </div>
+                                    
+                                    <div class="text-sm text-gray-700 flex-grow text-center sm:text-left">
+                                        <p class="mb-4 text-gray-600">
+                                            自行開車的與會者，請務必於研討會寄發的註冊表單上提前提出申請。另提醒，周六及周日期間，新中北路側門不開放，請統一由中北路200號大門進出。
+                                        </p>
+                                        
+                                        <a href="https://www.google.com/maps/dir/?api=1&destination=中原大學&destination_place_id=ChIJIfCgRxQiaDQR_7y4C2XShis&travelmode=driving" 
+                                        target="_blank" 
+                                        class="inline-flex items-center px-6 py-3 bg-emerald-600 text-white rounded-full hover:bg-emerald-700 hover:shadow-md transition-all duration-300 font-bold text-base transform hover:scale-105">
+                                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
+                                            </svg>
+                                            開啟 Google 地圖導航
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -1466,13 +1505,19 @@
                                 <img src="FTC.jpg" alt="富足康" class="h-20 md:h-40 w-auto object-contain transition-all duration-300 cursor-pointer hover:scale-110">
                             </div>
                             <div class="flex justify-center w-full" title="富山">
-                                <img src="KH.JPG" alt="富山" class="h-20 md:h-40 w-auto object-contain transition-all duration-300 cursor-pointer hover:scale-110">
+                                <img src="FC.jpg" alt="富山" class="h-20 md:h-40 w-auto object-contain transition-all duration-300 cursor-pointer hover:scale-110">
                             </div>
                             <div class="flex justify-center w-full" title="愛迪斯">
                                 <img src="axis.png" alt="愛迪斯" class="h-20 md:h-40 w-auto object-contain transition-all duration-300 cursor-pointer hover:scale-110">
                             </div>
                             <div class="flex justify-center w-full" title="見榛">
                                 <img src="GANZIN.png" alt="見榛" class="h-20 md:h-40 w-auto object-contain transition-all duration-300 cursor-pointer hover:scale-110">
+                            </div>
+                            <div class="flex justify-center w-full" title="拓比有限公司">
+                                <img src="tobii.jpg" alt="拓比有限公司" class="h-20 md:h-40 w-auto object-contain transition-all duration-300 cursor-pointer hover:scale-110">
+                            </div>
+                            <div class="flex justify-center w-full" title="錫昌">
+                                <img src="kys.png" alt="錫昌" class="h-20 md:h-40 w-auto object-contain transition-all duration-300 cursor-pointer hover:scale-110">
                             </div>
                             
                         </div>
@@ -1616,7 +1661,7 @@
         
         // --- NEWS DATA & LOGIC ---
         const allNewsData = [
-            { date: '2026年03月04日', title: '公告口頭與海報發表方式', content: '詳情參閱網站說明。', category: '最新消息' },
+            { date: '2026年03月04日', title: '公告口頭與海報發表方式', content: '詳情參閱網站說明。', category: '一般公告' },
             { date: '2026年02月09日', title: '學生論文競賽報名期限延長', content: '為鼓勵更多學生參與學生論文競賽，本屆研討會原訂於2026/02/09截止的報名期限，現調整延長至2026/02/13。歡迎研究所與大學部同學們踴躍報名參加！', category: '一般公告' },
             { date: '2026年02月09日', title: '徵稿期限延長', content: '原訂本次研討會投稿截止日期為2026/02/09。為鼓勵更多學生踴躍投稿並參與年會，同時提供投稿者更充裕的準備時間，主辦單位決定延長徵稿期限至2026/02/13。<br>配合徵稿延期，論文審查結果通知日期亦調整為2026/02/23。', category: '一般公告' },
             { date: '2026年02月09日', title: '早鳥報名時間更新', content: '2026/02/26前繳交報名註冊費，即可獲得早鳥優惠，詳情可至報名資訊查看，歡迎踴躍報名', category: '一般公告' },
@@ -2006,7 +2051,6 @@
     </script>
 </body>
 </html>
-
 
 
 
